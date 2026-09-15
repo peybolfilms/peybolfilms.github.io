@@ -298,6 +298,8 @@
     // inside-mask crop and the outside-mask spill stay pixel-aligned.
     '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' +
     '  -webkit-user-drag:none;user-select:none;touch-action:auto}' +
+    '.frame img{opacity:0;transition:opacity 620ms ease}' +
+    ':host([data-loaded]) .frame img{opacity:1}' +
     // Reframe mode (double-click): the full image spills past the mask. The
     // spill layer is sized to the IMAGE bounds so its corners are where the
     // resize handles belong. The ghost <img> inside is translucent; the real
@@ -602,11 +604,13 @@
       // the new image can actually paint (on error the frame shows its
       // background, same as a fresh slot with a broken src).
       this._img.addEventListener('load', () => {
+        this.setAttribute('data-loaded', '');
         this._loadPending = false;
         this._releaseMask(true);
         this._applyView();
       });
       this._img.addEventListener('error', () => {
+        this.setAttribute('data-loaded', '');
         this._loadPending = false;
         this._releaseMask(true);
       });
@@ -1141,6 +1145,7 @@
           this._loadPending = true;
           this._img.src = url;
           this._ghost.src = url;
+          if (this._img.complete) this.setAttribute('data-loaded', '');
         } else {
           // Same-src re-render — release if settled, so an ingest-set
           // spinner can't stick after a byte-identical re-upload (same
@@ -1148,6 +1153,7 @@
           this._releaseMask();
         }
         this._hidShowing = false;
+        if (this._img.complete) this.setAttribute('data-loaded', '');
         this._img.style.display = 'block';
         this._empty.style.display = 'none';
         this.setAttribute('data-filled', '');
