@@ -321,6 +321,13 @@ class Component extends DCLogic {
     3: 'https://drive.google.com/file/d/1NFduONP4RlWqtWUljD_0KJAvc-wAcVh-/view?usp=drive_link'
   };
 
+  _maybeFull(film) {
+    if (!this._driveId(film)) return;
+    const phone = window.matchMedia && window.matchMedia('(max-width: 820px)').matches;
+    if (!phone) return;
+    setTimeout(() => this._goFull(), 60);
+  }
+
   _goFull() {
     const el = this.frameRef && this.frameRef.current;
     if (!el) return;
@@ -335,6 +342,11 @@ class Component extends DCLogic {
       };
       if (p && p.then) p.then(lock).catch(() => {}); else lock();
     }
+  }
+
+  _exitFull() {
+    try { if (screen.orientation && screen.orientation.unlock) screen.orientation.unlock(); } catch (err) {}
+    try { if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen(); } catch (err) {}
   }
 
   _driveId(url) {
@@ -506,6 +518,9 @@ class Component extends DCLogic {
       if (Math.abs(dom) < 44) return;
       this.goTo(this._shown() + (dom < 0 ? 1 : -1));
     };
+    this._fsFn = () => this._onFsChange();
+    document.addEventListener('fullscreenchange', this._fsFn);
+    document.addEventListener('webkitfullscreenchange', this._fsFn);
     window.addEventListener('touchstart', this._onTS, { passive: true });
     window.addEventListener('touchend', this._onTE, { passive: true });
     window.addEventListener('keydown', this._onKey);
@@ -564,9 +579,17 @@ class Component extends DCLogic {
     if (left !== this.state.ruleLeft || on !== this.state.ruleOn) this.setState({ ruleLeft: left, ruleOn: on });
   }
 
+  _onFsChange() {
+    const on = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const b = document.querySelector('[data-wpfull]');
+    if (b) b.style.visibility = on ? 'hidden' : '';
+  }
+
   componentWillUnmount() {
     clearInterval(this._lsweep);
     window.removeEventListener('wheel', this._onWheel);
+    document.removeEventListener('fullscreenchange', this._fsFn);
+    document.removeEventListener('webkitfullscreenchange', this._fsFn);
     window.removeEventListener('touchstart', this._onTS);
     window.removeEventListener('touchend', this._onTE);
     window.removeEventListener('keydown', this._onKey);
@@ -746,6 +769,7 @@ class Component extends DCLogic {
       const q = el.play(); if (q && q.catch) q.catch(() => {});
     }
     this.setState({ i: k, target: null, rolling: false, player: true });
+    this._maybeFull(film);
   }
 
   _setLang(l) {
@@ -838,8 +862,10 @@ class Component extends DCLogic {
           const q = el.play(); if (q && q.catch) q.catch(() => {});
         }
         this.setState({ player: true });
+        this._maybeFull(film);
       },
       closePlayer: () => {
+        this._exitFull();
         const el = this.playerRef && this.playerRef.current;
         if (el) { el.pause(); }
         this._t0 = performance.now();
