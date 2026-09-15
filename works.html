@@ -689,6 +689,17 @@ class Component extends DCLogic {
         }
       });
     };
+    // the list's photo slots are built while the view is still hidden, so they
+    // can miss their first paint — nudge them the same way a hover does
+    if (!this._lkick) {
+      this._lkick = true;
+      const kick = () => root.querySelectorAll('image-slot').forEach((s) => {
+        s.dispatchEvent(new Event('pointerenter'));
+      });
+      kick();
+      setTimeout(kick, 120);
+      setTimeout(kick, 600);
+    }
     sweep();
     if (!this._lsweep) {
       root.addEventListener('scroll', sweep, { passive: true });
