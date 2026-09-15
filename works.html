@@ -15,12 +15,9 @@
   html, body { margin: 0; padding: 0; height: 100%; background: #05070a; overflow: hidden; }
   @media (hover: none) { * { --z: 1 !important; --ly: 0px !important; --rollY: 0% !important; } }
   @media (max-width: 820px) { [data-wptitle] { display: none !important; } }
-  /* desktop: pillarbox the Drive player at 16:9. phones: let it fill, so its
-     own controls and fullscreen behave natively */
+  /* desktop: pillarbox the player at 16:9. phones: let it fill */
   [data-wframe] iframe { width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 100%; }
   @media (max-width: 820px) { [data-wframe] iframe { height: 100%; aspect-ratio: auto; max-height: none; } }
-  @media (max-width: 820px) { [data-wpfull] { display: flex !important; } }
-  [data-wframe]:fullscreen iframe { height: 100%; aspect-ratio: auto; }
   @media (max-width: 820px) { [data-wpclose] { right: 14px !important; top: 14px !important; } }
   * { box-sizing: border-box; }
   a { color: #8fa3ba; text-decoration: none; }
@@ -302,7 +299,6 @@
       <span style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-size: 22px; text-transform: uppercase; color: #ede6d8;">{{ curBrand }}</span>
       <span style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-style: italic; font-size: 20px; text-transform: uppercase; color: rgba(237,230,216,.7);">{{ curTitle }}</span>
     </div>
-    <button type="button" onClick="{{ goFull }}" aria-label="Fullscreen" data-wpfull style="position: absolute; z-index: 2; right: 64px; top: 14px; display: none; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(237,230,216,.24); border-radius: 999px; background: rgba(5,7,10,.6); color: #ede6d8; font-family: 'Instrument Sans', sans-serif; font-size: 15px; line-height: 1; cursor: pointer;">⤢</button>
     <button type="button" onClick="{{ closePlayer }}" aria-label="Close" data-wpclose style="position: absolute; z-index: 2; right: 40px; top: 30px; width: 40px; height: 40px; border: 1px solid rgba(237,230,216,.24); border-radius: 999px; background: rgba(5,7,10,.6); color: #ede6d8; font-family: 'Instrument Sans', sans-serif; font-size: 15px; line-height: 1; cursor: pointer;">×</button>
   </div>
 
@@ -312,17 +308,18 @@
 class Component extends DCLogic {
   state = { i: 0, prog: 0, player: false, urls: {}, trims: {}, edit: false, view: 'grid', menuOpen: false };
 
-  // Google Drive links (streamed by Drive, so no bandwidth of ours).
+  // Films stream from YouTube (unlisted): one clean control bar, native
+  // fullscreen + rotation, selectable quality, no bandwidth of ours.
   // index order matches the trailer array: 0 summer, 1 carrefour, 2 motogp, 3 railjam
   static DRIVE = {
-    0: 'https://drive.google.com/file/d/1DMfwQ5pn2BM6H_2bFmNGgEIby0t3_lDe/view?usp=drive_link',
-    1: 'https://drive.google.com/file/d/1tlBXY5E8KZtL2ckqp3tfRVQpcXSNS4Ue/view?usp=drive_link',
-    2: 'https://drive.google.com/file/d/1i-H0iYhMk6lZ9tv_w8l7jUUn6c_xwf6z/view?usp=drive_link',
-    3: 'https://drive.google.com/file/d/1NFduONP4RlWqtWUljD_0KJAvc-wAcVh-/view?usp=drive_link'
+    0: 'https://youtu.be/Jd_B1Tb0D-c',
+    1: 'https://youtu.be/BN5ZOeYCt6E',
+    2: 'https://youtu.be/-LVJF6SxcdQ',
+    3: 'https://youtu.be/aPlnbRKkNeE'
   };
 
   _maybeFull(film) {
-    if (!this._driveId(film)) return;
+    if (!this._driveId(film) || this._ytId(film)) return;
     const phone = window.matchMedia && window.matchMedia('(max-width: 820px)').matches;
     if (!phone) return;
     setTimeout(() => this._goFull(), 60);
@@ -350,9 +347,29 @@ class Component extends DCLogic {
   }
 
   _driveId(url) {
-    if (typeof url !== 'string' || url.indexOf('drive.google.com') < 0) return null;
+    if (typeof url !== 'string') return null;
+    if (this._ytId(url)) return this._ytId(url);
+    if (url.indexOf('drive.google.com') < 0) return null;
     const m = url.match(/\/d\/([\w-]{10,})/) || url.match(/[?&]id=([\w-]{10,})/);
     return m ? m[1] : null;
+  }
+
+  _ytId(url) {
+    if (typeof url !== 'string') return null;
+    let m = url.match(/youtu\.be\/([\w-]{6,})/);
+    if (!m) m = url.match(/[?&]v=([\w-]{6,})/);
+    if (!m) m = url.match(/youtube\.com\/embed\/([\w-]{6,})/);
+    return m ? m[1] : null;
+  }
+
+  _embedSrc(url) {
+    const yt = this._ytId(url);
+    if (yt) {
+      return 'https://www.youtube-nocookie.com/embed/' + yt +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=0&color=white&iv_load_policy=3';
+    }
+    const d = this._driveId(url);
+    return d ? ('https://drive.google.com/file/d/' + d + '/preview') : 'about:blank';
   }
 
   items() {
@@ -518,9 +535,6 @@ class Component extends DCLogic {
       if (Math.abs(dom) < 44) return;
       this.goTo(this._shown() + (dom < 0 ? 1 : -1));
     };
-    this._fsFn = () => this._onFsChange();
-    document.addEventListener('fullscreenchange', this._fsFn);
-    document.addEventListener('webkitfullscreenchange', this._fsFn);
     window.addEventListener('touchstart', this._onTS, { passive: true });
     window.addEventListener('touchend', this._onTE, { passive: true });
     window.addEventListener('keydown', this._onKey);
@@ -579,17 +593,9 @@ class Component extends DCLogic {
     if (left !== this.state.ruleLeft || on !== this.state.ruleOn) this.setState({ ruleLeft: left, ruleOn: on });
   }
 
-  _onFsChange() {
-    const on = !!(document.fullscreenElement || document.webkitFullscreenElement);
-    const b = document.querySelector('[data-wpfull]');
-    if (b) b.style.visibility = on ? 'hidden' : '';
-  }
-
   componentWillUnmount() {
     clearInterval(this._lsweep);
     window.removeEventListener('wheel', this._onWheel);
-    document.removeEventListener('fullscreenchange', this._fsFn);
-    document.removeEventListener('webkitfullscreenchange', this._fsFn);
     window.removeEventListener('touchstart', this._onTS);
     window.removeEventListener('touchend', this._onTE);
     window.removeEventListener('keydown', this._onKey);
@@ -847,8 +853,7 @@ class Component extends DCLogic {
       playerPE: this.state.player ? 'auto' : 'none',
       playerRef: this.playerRef,
       frameRef: this.frameRef,
-      goFull: () => this._goFull(),
-      driveSrc: (this.state.player && this._driveId(cur.film || cur.src)) ? ('https://drive.google.com/file/d/' + this._driveId(cur.film || cur.src) + '/preview') : 'about:blank',
+      driveSrc: (this.state.player && this._driveId(cur.film || cur.src)) ? this._embedSrc(cur.film || cur.src) : 'about:blank',
       driveDisp: (this.state.player && this._driveId(cur.film || cur.src)) ? 'flex' : 'none',
       localDisp: this._driveId(cur.film || cur.src) ? 'none' : 'block',
       openPlayer: () => {
