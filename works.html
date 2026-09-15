@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; padding: 0; height: 100%; background: #05070a; overflow: hidden; }
+  @media (hover: none) { * { --z: 1 !important; --ly: 0px !important; --rollY: 0% !important; } }
+  @media (max-width: 820px) { [data-wptitle] { display: none !important; } }
   * { box-sizing: border-box; }
   a { color: #8fa3ba; text-decoration: none; }
   a:hover { color: #ede6d8; }
@@ -285,9 +287,9 @@
   </div>
 
   <div style="position: fixed; inset: 0; z-index: 60; background: #05070a; opacity: {{ playerO }}; pointer-events: {{ playerPE }}; transition: opacity 520ms cubic-bezier(.4,0,.2,1);">
-    <video ref="{{ playerRef }}" controls="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #05070a; opacity: {{ localO }}; pointer-events: {{ localPE }};"></video>
-    <iframe src="{{ driveSrc }}" title="Film" allow="autoplay; fullscreen" allowFullScreen="{{ true }}" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 0; background: #05070a; opacity: {{ driveO }}; pointer-events: {{ drivePE }};"></iframe>
-    <div style="position: absolute; left: 44px; top: 34px; display: flex; align-items: baseline; gap: 16px; pointer-events: none;">
+    <video ref="{{ playerRef }}" controls="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #05070a; display: {{ localDisp }};"></video>
+    <iframe src="{{ driveSrc }}" title="Film" allow="autoplay; fullscreen" allowFullScreen="{{ true }}" style="position: absolute; left: 0; top: 50%; width: 100%; aspect-ratio: 16 / 9; max-height: 100%; transform: translateY(-50%); border: 0; background: #05070a; display: {{ driveDisp }};"></iframe>
+    <div data-wptitle style="position: absolute; left: 44px; top: 34px; display: flex; align-items: baseline; gap: 16px; pointer-events: none;">
       <span style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-size: 22px; text-transform: uppercase; color: #ede6d8;">{{ curBrand }}</span>
       <span style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-style: italic; font-size: 20px; text-transform: uppercase; color: rgba(237,230,216,.7);">{{ curTitle }}</span>
     </div>
@@ -456,6 +458,29 @@ class Component extends DCLogic {
       if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') this.goTo(this._shown() - 1);
     };
     window.addEventListener('wheel', this._onWheel, { passive: true });
+
+    // touch equivalent of the wheel nav: a vertical (or horizontal) swipe on the
+    // grid steps to the next/previous work. List view keeps native scrolling.
+    this._onTS = (e) => {
+      const t = e.touches && e.touches[0];
+      this._tsY = t ? t.clientY : null;
+      this._tsX = t ? t.clientX : null;
+      this._tsT = performance.now();
+    };
+    this._onTE = (e) => {
+      if (this._tsY == null) return;
+      const t = e.changedTouches && e.changedTouches[0];
+      const y0 = this._tsY, x0 = this._tsX;
+      this._tsY = this._tsX = null;
+      if (!t || this.state.player || this.state.view === 'list' || this.state.rolling) return;
+      if (performance.now() - (this._tsT || 0) > 700) return;
+      const dy = t.clientY - y0, dx = t.clientX - x0;
+      const dom = Math.abs(dy) >= Math.abs(dx) ? dy : dx;
+      if (Math.abs(dom) < 44) return;
+      this.goTo(this._shown() + (dom < 0 ? 1 : -1));
+    };
+    window.addEventListener('touchstart', this._onTS, { passive: true });
+    window.addEventListener('touchend', this._onTE, { passive: true });
     window.addEventListener('keydown', this._onKey);
 
     const loop = () => {
@@ -515,6 +540,8 @@ class Component extends DCLogic {
   componentWillUnmount() {
     clearInterval(this._lsweep);
     window.removeEventListener('wheel', this._onWheel);
+    window.removeEventListener('touchstart', this._onTS);
+    window.removeEventListener('touchend', this._onTE);
     window.removeEventListener('keydown', this._onKey);
     window.removeEventListener('resize', this._onResize);
     window.removeEventListener('dragover', this._onDragOver);
@@ -755,10 +782,8 @@ class Component extends DCLogic {
       playerPE: this.state.player ? 'auto' : 'none',
       playerRef: this.playerRef,
       driveSrc: (this.state.player && this._driveId(cur.film || cur.src)) ? ('https://drive.google.com/file/d/' + this._driveId(cur.film || cur.src) + '/preview') : 'about:blank',
-      driveO: (this.state.player && this._driveId(cur.film || cur.src)) ? 1 : 0,
-      drivePE: (this.state.player && this._driveId(cur.film || cur.src)) ? 'auto' : 'none',
-      localO: this._driveId(cur.film || cur.src) ? 0 : 1,
-      localPE: this._driveId(cur.film || cur.src) ? 'none' : 'auto',
+      driveDisp: (this.state.player && this._driveId(cur.film || cur.src)) ? 'block' : 'none',
+      localDisp: this._driveId(cur.film || cur.src) ? 'none' : 'block',
       openPlayer: () => {
         const el = this.playerRef && this.playerRef.current;
         const film = cur.film || cur.src;

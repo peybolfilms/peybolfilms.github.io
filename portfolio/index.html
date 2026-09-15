@@ -20,6 +20,7 @@
   ::selection { background: #ede6d8; color: #131a23; }
   html { scrollbar-width: none; -ms-overflow-style: none; }
   html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
+  @media (hover: none) { * { --z: 1 !important; --ly: 0px !important; --rollY: 0% !important; } }
   [data-rv] { opacity: 0; transform: translateY(30px); filter: blur(9px); transition: opacity 900ms ease, transform 1150ms cubic-bezier(.16,1,.3,1), filter 950ms ease; }
   [data-rv-on="1"] { opacity: 1; transform: none; filter: blur(0px); }
   [data-rv="tile"] { opacity: 0; transform: translateY(16px); filter: blur(6px); clip-path: inset(0 0 100% 0); transition: opacity 760ms ease, transform 1100ms cubic-bezier(.16,1,.3,1), filter 800ms ease, clip-path 1150ms cubic-bezier(.16,1,.3,1); }
