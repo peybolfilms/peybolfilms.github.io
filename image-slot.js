@@ -91,7 +91,7 @@
 /* END USAGE */
 
 (() => {
-  const STATE_FILE = 'image-slots.json';
+  const STATE_FILE = '.image-slots.state.json';
 
   // Unsplash terms require visible attribution wherever their photos
   // display, and every link back to unsplash.com must carry utm referral
@@ -502,7 +502,7 @@
       root.innerHTML =
         '<style>' + stylesheet + '</style>' +
         '<div class="frame" part="frame">' +
-        '  <img part="image" alt="" draggable="false" decoding="async" fetchpriority="low" style="display:none">' +
+        '  <img part="image" alt="" draggable="false" decoding="async" fetchpriority="auto" style="display:none">' +
         '  <div class="empty" part="empty">' + icon +
         '    <div class="cap"></div>' +
         '    <div class="sub">or <u>browse files</u></div></div>' +

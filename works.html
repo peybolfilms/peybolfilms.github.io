@@ -68,6 +68,10 @@
 </style>
 <script src="./progress-bar.js"></script>
 <script src="./image-slot.js"></script>
+<style>
+  img, video, image-slot, [data-noimg] { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+</style>
+<script src="./noimg.js"></script>
 </helmet>
 <div ref="{{ rootRef }}" style="position: fixed; inset: 0; background: #05070a; overflow: hidden; font-family: 'Instrument Sans', sans-serif; color: #ede6d8; animation: worksEnter 900ms cubic-bezier(.16,1,.3,1) both, worksEnterFade 520ms ease both; will-change: transform;">
 

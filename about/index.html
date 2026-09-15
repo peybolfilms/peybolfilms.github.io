@@ -63,6 +63,10 @@
 </style>
 <script src="./progress-bar.js"></script>
 <script src="./image-slot.js"></script>
+<style>
+  img, video, image-slot, [data-noimg] { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+</style>
+<script src="./noimg.js"></script>
 </helmet>
 <div data-abgrid style="display: grid; grid-template-columns: minmax(360px, 480px) 1fr; align-items: stretch; min-height: 100vh; background: #05070a; animation: pfPage 480ms ease 260ms both; font-family: 'Instrument Sans', sans-serif; color: #ede6d8;">
 
@@ -234,7 +238,7 @@
       <div style="position: absolute; inset: 0; transform: scale(var(--z, 1)); filter: grayscale(var(--g, 1)) contrast(1.04); transition: transform 1200ms cubic-bezier(.16,1,.3,1), filter 700ms ease;"><image-slot id="about-m3" shape="rect" fit="cover" src="../assets/about-camera.webp" placeholder="Detail"></image-slot></div>
     </div>
     <div data-rv="1" style="position: relative; overflow: hidden; border-radius: 6px; background: #0b1017; --z: 1;" style-hover="--z: 1.04; --g: 0;">
-      <div style="position: absolute; inset: 0; transform: scale(var(--z, 1)); filter: grayscale(var(--g, 1)) contrast(1.04); transition: transform 1200ms cubic-bezier(.16,1,.3,1), filter 700ms ease;"><image-slot id="about-m4" shape="rect" fit="cover" src="../assets/about-vertigo.webp" placeholder="Frame"></image-slot></div>
+      <div style="position: absolute; inset: 0; transform: scale(var(--z, 1)); filter: grayscale(var(--g, 1)) contrast(1.04); transition: transform 1200ms cubic-bezier(.16,1,.3,1), filter 700ms ease;"><image-slot id="about-m4" shape="rect" fit="cover" src="../assets/about-vertigo-s.jpg" placeholder="Frame"></image-slot></div>
     </div>
     <div data-rv="1" style="position: relative; overflow: hidden; border-radius: 6px; background: #0b1017; --z: 1;" style-hover="--z: 1.04; --g: 0;">
       <div style="position: absolute; inset: 0; transform: scale(var(--z, 1)); filter: grayscale(var(--g, 1)) contrast(1.04); transition: transform 1200ms cubic-bezier(.16,1,.3,1), filter 700ms ease;"><image-slot id="about-m5" shape="rect" fit="cover" src="../assets/about-nada.webp" placeholder="Frame"></image-slot></div>
