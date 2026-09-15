@@ -18,6 +18,7 @@
   /* desktop: pillarbox the Drive player at 16:9. phones: let it fill, so its
      own controls and fullscreen behave natively */
   [data-wframe] iframe { width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 100%; }
+  @media (max-width: 820px) { [data-wframe] iframe { height: 100%; aspect-ratio: auto; max-height: none; } }
   @media (max-width: 820px) { [data-wpfull] { display: flex !important; } }
   [data-wframe]:fullscreen iframe { height: 100%; aspect-ratio: auto; }
   @media (max-width: 820px) { [data-wpclose] { right: 14px !important; top: 14px !important; } }
