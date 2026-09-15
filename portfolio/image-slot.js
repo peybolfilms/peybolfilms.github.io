@@ -298,8 +298,7 @@
     // inside-mask crop and the outside-mask spill stay pixel-aligned.
     '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' +
     '  -webkit-user-drag:none;user-select:none;touch-action:auto}' +
-    '.frame img{opacity:0;transition:opacity 620ms ease}' +
-    ':host([data-loaded]) .frame img{opacity:1}' +
+    '.frame img{transition:opacity 620ms ease}' +
     // Reframe mode (double-click): the full image spills past the mask. The
     // spill layer is sized to the IMAGE bounds so its corners are where the
     // resize handles belong. The ghost <img> inside is translucent; the real
