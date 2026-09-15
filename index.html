@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="preload" as="image" href="./assets/loader-lockup.jpg">
+<link rel="preload" as="image" href="./assets/hero-frame.jpg">
+<link rel="preload" as="image" href="./assets/stone-photo.jpg">
+<link rel="preload" as="image" href="./assets/wordmark-ink.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Roboto:wght@400;500;700&amp;family=Saira+Condensed:wght@700&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; min-height: 100%; background: #ffffff; }
+  * { box-sizing: border-box; }
+  a { color: #8fa3ba; text-decoration: none; }
+  a:hover { color: #ede6d8; }
+  @keyframes loaderIn { from { opacity: 0; filter: blur(20px); } to { opacity: 1; filter: blur(0); } }
+  @keyframes stripStep { 0.0000% { transform: translate3d(0px,0,0); } 0.2778% { transform: translate3d(-3.6px,0,0); } 0.5556% { transform: translate3d(-7.3px,0,0); } 0.8333% { transform: translate3d(-11.21px,0,0); } 1.1111% { transform: translate3d(-15.44px,0,0); } 1.3889% { transform: translate3d(-20.07px,0,0); } 1.6667% { transform: translate3d(-25.18px,0,0); } 1.9444% { transform: translate3d(-30.85px,0,0); } 2.2222% { transform: translate3d(-37.13px,0,0); } 2.5000% { transform: translate3d(-44.06px,0,0); } 2.7778% { transform: translate3d(-51.66px,0,0); } 3.0556% { transform: translate3d(-59.96px,0,0); } 3.3333% { transform: translate3d(-68.93px,0,0); } 3.6111% { transform: translate3d(-78.55px,0,0); } 3.8889% { transform: translate3d(-88.78px,0,0); } 4.1667% { transform: translate3d(-99.57px,0,0); } 4.4444% { transform: translate3d(-110.84px,0,0); } 4.7222% { transform: translate3d(-122.51px,0,0); } 5.0000% { transform: translate3d(-134.5px,0,0); } 5.2778% { transform: translate3d(-146.7px,0,0); } 5.5556% { transform: translate3d(-159px,0,0); } 5.8333% { transform: translate3d(-171.3px,0,0); } 6.1111% { transform: translate3d(-183.5px,0,0); } 6.3889% { transform: translate3d(-195.49px,0,0); } 6.6667% { transform: translate3d(-207.16px,0,0); } 6.9444% { transform: translate3d(-218.43px,0,0); } 7.2222% { transform: translate3d(-229.22px,0,0); } 7.5000% { transform: translate3d(-239.45px,0,0); } 7.7778% { transform: translate3d(-249.07px,0,0); } 8.0556% { transform: translate3d(-258.04px,0,0); } 8.3333% { transform: translate3d(-266.34px,0,0); } 8.6111% { transform: translate3d(-273.94px,0,0); } 8.8889% { transform: translate3d(-280.87px,0,0); } 9.1667% { transform: translate3d(-287.15px,0,0); } 9.4444% { transform: translate3d(-292.82px,0,0); } 9.7222% { transform: translate3d(-297.93px,0,0); } 10.0000% { transform: translate3d(-302.56px,0,0); } 10.2778% { transform: translate3d(-306.79px,0,0); } 10.5556% { transform: translate3d(-310.7px,0,0); } 10.8333% { transform: translate3d(-314.4px,0,0); } 11.1111% { transform: translate3d(-318px,0,0); } 11.3889% { transform: translate3d(-321.6px,0,0); } 11.6667% { transform: translate3d(-325.3px,0,0); } 11.9444% { transform: translate3d(-329.21px,0,0); } 12.2222% { transform: translate3d(-333.44px,0,0); } 12.5000% { transform: translate3d(-338.07px,0,0); } 12.7778% { transform: translate3d(-343.18px,0,0); } 13.0556% { transform: translate3d(-348.85px,0,0); } 13.3333% { transform: translate3d(-355.13px,0,0); } 13.6111% { transform: translate3d(-362.06px,0,0); } 13.8889% { transform: translate3d(-369.66px,0,0); } 14.1667% { transform: translate3d(-377.96px,0,0); } 14.4444% { transform: translate3d(-386.93px,0,0); } 14.7222% { transform: translate3d(-396.55px,0,0); } 15.0000% { transform: translate3d(-406.78px,0,0); } 15.2778% { transform: translate3d(-417.57px,0,0); } 15.5556% { transform: translate3d(-428.84px,0,0); } 15.8333% { transform: translate3d(-440.51px,0,0); } 16.1111% { transform: translate3d(-452.5px,0,0); } 16.3889% { transform: translate3d(-464.7px,0,0); } 16.6667% { transform: translate3d(-477px,0,0); } 16.9444% { transform: translate3d(-489.3px,0,0); } 17.2222% { transform: translate3d(-501.5px,0,0); } 17.5000% { transform: translate3d(-513.49px,0,0); } 17.7778% { transform: translate3d(-525.16px,0,0); } 18.0556% { transform: translate3d(-536.43px,0,0); } 18.3333% { transform: translate3d(-547.22px,0,0); } 18.6111% { transform: translate3d(-557.45px,0,0); } 18.8889% { transform: translate3d(-567.07px,0,0); } 19.1667% { transform: translate3d(-576.04px,0,0); } 19.4444% { transform: translate3d(-584.34px,0,0); } 19.7222% { transform: translate3d(-591.94px,0,0); } 20.0000% { transform: translate3d(-598.87px,0,0); } 20.2778% { transform: translate3d(-605.15px,0,0); } 20.5556% { transform: translate3d(-610.82px,0,0); } 20.8333% { transform: translate3d(-615.93px,0,0); } 21.1111% { transform: translate3d(-620.56px,0,0); } 21.3889% { transform: translate3d(-624.79px,0,0); } 21.6667% { transform: translate3d(-628.7px,0,0); } 21.9444% { transform: translate3d(-632.4px,0,0); } 22.2222% { transform: translate3d(-636px,0,0); } 22.5000% { transform: translate3d(-639.6px,0,0); } 22.7778% { transform: translate3d(-643.3px,0,0); } 23.0556% { transform: translate3d(-647.21px,0,0); } 23.3333% { transform: translate3d(-651.44px,0,0); } 23.6111% { transform: translate3d(-656.07px,0,0); } 23.8889% { transform: translate3d(-661.18px,0,0); } 24.1667% { transform: translate3d(-666.85px,0,0); } 24.4444% { transform: translate3d(-673.13px,0,0); } 24.7222% { transform: translate3d(-680.06px,0,0); } 25.0000% { transform: translate3d(-687.66px,0,0); } 25.2778% { transform: translate3d(-695.96px,0,0); } 25.5556% { transform: translate3d(-704.93px,0,0); } 25.8333% { transform: translate3d(-714.55px,0,0); } 26.1111% { transform: translate3d(-724.78px,0,0); } 26.3889% { transform: translate3d(-735.57px,0,0); } 26.6667% { transform: translate3d(-746.84px,0,0); } 26.9444% { transform: translate3d(-758.51px,0,0); } 27.2222% { transform: translate3d(-770.5px,0,0); } 27.5000% { transform: translate3d(-782.7px,0,0); } 27.7778% { transform: translate3d(-795px,0,0); } 28.0556% { transform: translate3d(-807.3px,0,0); } 28.3333% { transform: translate3d(-819.5px,0,0); } 28.6111% { transform: translate3d(-831.49px,0,0); } 28.8889% { transform: translate3d(-843.16px,0,0); } 29.1667% { transform: translate3d(-854.43px,0,0); } 29.4444% { transform: translate3d(-865.22px,0,0); } 29.7222% { transform: translate3d(-875.45px,0,0); } 30.0000% { transform: translate3d(-885.07px,0,0); } 30.2778% { transform: translate3d(-894.04px,0,0); } 30.5556% { transform: translate3d(-902.34px,0,0); } 30.8333% { transform: translate3d(-909.94px,0,0); } 31.1111% { transform: translate3d(-916.87px,0,0); } 31.3889% { transform: translate3d(-923.15px,0,0); } 31.6667% { transform: translate3d(-928.82px,0,0); } 31.9444% { transform: translate3d(-933.93px,0,0); } 32.2222% { transform: translate3d(-938.56px,0,0); } 32.5000% { transform: translate3d(-942.79px,0,0); } 32.7778% { transform: translate3d(-946.7px,0,0); } 33.0556% { transform: translate3d(-950.4px,0,0); } 33.3333% { transform: translate3d(-954px,0,0); } 33.6111% { transform: translate3d(-957.6px,0,0); } 33.8889% { transform: translate3d(-961.3px,0,0); } 34.1667% { transform: translate3d(-965.21px,0,0); } 34.4444% { transform: translate3d(-969.44px,0,0); } 34.7222% { transform: translate3d(-974.07px,0,0); } 35.0000% { transform: translate3d(-979.18px,0,0); } 35.2778% { transform: translate3d(-984.85px,0,0); } 35.5556% { transform: translate3d(-991.13px,0,0); } 35.8333% { transform: translate3d(-998.06px,0,0); } 36.1111% { transform: translate3d(-1005.66px,0,0); } 36.3889% { transform: translate3d(-1013.96px,0,0); } 36.6667% { transform: translate3d(-1022.93px,0,0); } 36.9444% { transform: translate3d(-1032.55px,0,0); } 37.2222% { transform: translate3d(-1042.78px,0,0); } 37.5000% { transform: translate3d(-1053.57px,0,0); } 37.7778% { transform: translate3d(-1064.84px,0,0); } 38.0556% { transform: translate3d(-1076.51px,0,0); } 38.3333% { transform: translate3d(-1088.5px,0,0); } 38.6111% { transform: translate3d(-1100.7px,0,0); } 38.8889% { transform: translate3d(-1113px,0,0); } 39.1667% { transform: translate3d(-1125.3px,0,0); } 39.4444% { transform: translate3d(-1137.5px,0,0); } 39.7222% { transform: translate3d(-1149.49px,0,0); } 40.0000% { transform: translate3d(-1161.16px,0,0); } 40.2778% { transform: translate3d(-1172.43px,0,0); } 40.5556% { transform: translate3d(-1183.22px,0,0); } 40.8333% { transform: translate3d(-1193.45px,0,0); } 41.1111% { transform: translate3d(-1203.07px,0,0); } 41.3889% { transform: translate3d(-1212.04px,0,0); } 41.6667% { transform: translate3d(-1220.34px,0,0); } 41.9444% { transform: translate3d(-1227.94px,0,0); } 42.2222% { transform: translate3d(-1234.87px,0,0); } 42.5000% { transform: translate3d(-1241.15px,0,0); } 42.7778% { transform: translate3d(-1246.82px,0,0); } 43.0556% { transform: translate3d(-1251.93px,0,0); } 43.3333% { transform: translate3d(-1256.56px,0,0); } 43.6111% { transform: translate3d(-1260.79px,0,0); } 43.8889% { transform: translate3d(-1264.7px,0,0); } 44.1667% { transform: translate3d(-1268.4px,0,0); } 44.4444% { transform: translate3d(-1272px,0,0); } 44.7222% { transform: translate3d(-1275.6px,0,0); } 45.0000% { transform: translate3d(-1279.3px,0,0); } 45.2778% { transform: translate3d(-1283.21px,0,0); } 45.5556% { transform: translate3d(-1287.44px,0,0); } 45.8333% { transform: translate3d(-1292.07px,0,0); } 46.1111% { transform: translate3d(-1297.18px,0,0); } 46.3889% { transform: translate3d(-1302.85px,0,0); } 46.6667% { transform: translate3d(-1309.13px,0,0); } 46.9444% { transform: translate3d(-1316.06px,0,0); } 47.2222% { transform: translate3d(-1323.66px,0,0); } 47.5000% { transform: translate3d(-1331.96px,0,0); } 47.7778% { transform: translate3d(-1340.93px,0,0); } 48.0556% { transform: translate3d(-1350.55px,0,0); } 48.3333% { transform: translate3d(-1360.78px,0,0); } 48.6111% { transform: translate3d(-1371.57px,0,0); } 48.8889% { transform: translate3d(-1382.84px,0,0); } 49.1667% { transform: translate3d(-1394.51px,0,0); } 49.4444% { transform: translate3d(-1406.5px,0,0); } 49.7222% { transform: translate3d(-1418.7px,0,0); } 50.0000% { transform: translate3d(-1431px,0,0); } 50.2778% { transform: translate3d(-1443.3px,0,0); } 50.5556% { transform: translate3d(-1455.5px,0,0); } 50.8333% { transform: translate3d(-1467.49px,0,0); } 51.1111% { transform: translate3d(-1479.16px,0,0); } 51.3889% { transform: translate3d(-1490.43px,0,0); } 51.6667% { transform: translate3d(-1501.22px,0,0); } 51.9444% { transform: translate3d(-1511.45px,0,0); } 52.2222% { transform: translate3d(-1521.07px,0,0); } 52.5000% { transform: translate3d(-1530.04px,0,0); } 52.7778% { transform: translate3d(-1538.34px,0,0); } 53.0556% { transform: translate3d(-1545.94px,0,0); } 53.3333% { transform: translate3d(-1552.87px,0,0); } 53.6111% { transform: translate3d(-1559.15px,0,0); } 53.8889% { transform: translate3d(-1564.82px,0,0); } 54.1667% { transform: translate3d(-1569.93px,0,0); } 54.4444% { transform: translate3d(-1574.56px,0,0); } 54.7222% { transform: translate3d(-1578.79px,0,0); } 55.0000% { transform: translate3d(-1582.7px,0,0); } 55.2778% { transform: translate3d(-1586.4px,0,0); } 55.5556% { transform: translate3d(-1590px,0,0); } 55.8333% { transform: translate3d(-1593.6px,0,0); } 56.1111% { transform: translate3d(-1597.3px,0,0); } 56.3889% { transform: translate3d(-1601.21px,0,0); } 56.6667% { transform: translate3d(-1605.44px,0,0); } 56.9444% { transform: translate3d(-1610.07px,0,0); } 57.2222% { transform: translate3d(-1615.18px,0,0); } 57.5000% { transform: translate3d(-1620.85px,0,0); } 57.7778% { transform: translate3d(-1627.13px,0,0); } 58.0556% { transform: translate3d(-1634.06px,0,0); } 58.3333% { transform: translate3d(-1641.66px,0,0); } 58.6111% { transform: translate3d(-1649.96px,0,0); } 58.8889% { transform: translate3d(-1658.93px,0,0); } 59.1667% { transform: translate3d(-1668.55px,0,0); } 59.4444% { transform: translate3d(-1678.78px,0,0); } 59.7222% { transform: translate3d(-1689.57px,0,0); } 60.0000% { transform: translate3d(-1700.84px,0,0); } 60.2778% { transform: translate3d(-1712.51px,0,0); } 60.5556% { transform: translate3d(-1724.5px,0,0); } 60.8333% { transform: translate3d(-1736.7px,0,0); } 61.1111% { transform: translate3d(-1749px,0,0); } 61.3889% { transform: translate3d(-1761.3px,0,0); } 61.6667% { transform: translate3d(-1773.5px,0,0); } 61.9444% { transform: translate3d(-1785.49px,0,0); } 62.2222% { transform: translate3d(-1797.16px,0,0); } 62.5000% { transform: translate3d(-1808.43px,0,0); } 62.7778% { transform: translate3d(-1819.22px,0,0); } 63.0556% { transform: translate3d(-1829.45px,0,0); } 63.3333% { transform: translate3d(-1839.07px,0,0); } 63.6111% { transform: translate3d(-1848.04px,0,0); } 63.8889% { transform: translate3d(-1856.34px,0,0); } 64.1667% { transform: translate3d(-1863.94px,0,0); } 64.4444% { transform: translate3d(-1870.87px,0,0); } 64.7222% { transform: translate3d(-1877.15px,0,0); } 65.0000% { transform: translate3d(-1882.82px,0,0); } 65.2778% { transform: translate3d(-1887.93px,0,0); } 65.5556% { transform: translate3d(-1892.56px,0,0); } 65.8333% { transform: translate3d(-1896.79px,0,0); } 66.1111% { transform: translate3d(-1900.7px,0,0); } 66.3889% { transform: translate3d(-1904.4px,0,0); } 66.6667% { transform: translate3d(-1908px,0,0); } 66.9444% { transform: translate3d(-1911.6px,0,0); } 67.2222% { transform: translate3d(-1915.3px,0,0); } 67.5000% { transform: translate3d(-1919.21px,0,0); } 67.7778% { transform: translate3d(-1923.44px,0,0); } 68.0556% { transform: translate3d(-1928.07px,0,0); } 68.3333% { transform: translate3d(-1933.18px,0,0); } 68.6111% { transform: translate3d(-1938.85px,0,0); } 68.8889% { transform: translate3d(-1945.13px,0,0); } 69.1667% { transform: translate3d(-1952.06px,0,0); } 69.4444% { transform: translate3d(-1959.66px,0,0); } 69.7222% { transform: translate3d(-1967.96px,0,0); } 70.0000% { transform: translate3d(-1976.93px,0,0); } 70.2778% { transform: translate3d(-1986.55px,0,0); } 70.5556% { transform: translate3d(-1996.78px,0,0); } 70.8333% { transform: translate3d(-2007.57px,0,0); } 71.1111% { transform: translate3d(-2018.84px,0,0); } 71.3889% { transform: translate3d(-2030.51px,0,0); } 71.6667% { transform: translate3d(-2042.5px,0,0); } 71.9444% { transform: translate3d(-2054.7px,0,0); } 72.2222% { transform: translate3d(-2067px,0,0); } 72.5000% { transform: translate3d(-2079.3px,0,0); } 72.7778% { transform: translate3d(-2091.5px,0,0); } 73.0556% { transform: translate3d(-2103.49px,0,0); } 73.3333% { transform: translate3d(-2115.16px,0,0); } 73.6111% { transform: translate3d(-2126.43px,0,0); } 73.8889% { transform: translate3d(-2137.22px,0,0); } 74.1667% { transform: translate3d(-2147.45px,0,0); } 74.4444% { transform: translate3d(-2157.07px,0,0); } 74.7222% { transform: translate3d(-2166.04px,0,0); } 75.0000% { transform: translate3d(-2174.34px,0,0); } 75.2778% { transform: translate3d(-2181.94px,0,0); } 75.5556% { transform: translate3d(-2188.87px,0,0); } 75.8333% { transform: translate3d(-2195.15px,0,0); } 76.1111% { transform: translate3d(-2200.82px,0,0); } 76.3889% { transform: translate3d(-2205.93px,0,0); } 76.6667% { transform: translate3d(-2210.56px,0,0); } 76.9444% { transform: translate3d(-2214.79px,0,0); } 77.2222% { transform: translate3d(-2218.7px,0,0); } 77.5000% { transform: translate3d(-2222.4px,0,0); } 77.7778% { transform: translate3d(-2226px,0,0); } 78.0556% { transform: translate3d(-2229.6px,0,0); } 78.3333% { transform: translate3d(-2233.3px,0,0); } 78.6111% { transform: translate3d(-2237.21px,0,0); } 78.8889% { transform: translate3d(-2241.44px,0,0); } 79.1667% { transform: translate3d(-2246.07px,0,0); } 79.4444% { transform: translate3d(-2251.18px,0,0); } 79.7222% { transform: translate3d(-2256.85px,0,0); } 80.0000% { transform: translate3d(-2263.13px,0,0); } 80.2778% { transform: translate3d(-2270.06px,0,0); } 80.5556% { transform: translate3d(-2277.66px,0,0); } 80.8333% { transform: translate3d(-2285.96px,0,0); } 81.1111% { transform: translate3d(-2294.93px,0,0); } 81.3889% { transform: translate3d(-2304.55px,0,0); } 81.6667% { transform: translate3d(-2314.78px,0,0); } 81.9444% { transform: translate3d(-2325.57px,0,0); } 82.2222% { transform: translate3d(-2336.84px,0,0); } 82.5000% { transform: translate3d(-2348.51px,0,0); } 82.7778% { transform: translate3d(-2360.5px,0,0); } 83.0556% { transform: translate3d(-2372.7px,0,0); } 83.3333% { transform: translate3d(-2385px,0,0); } 83.6111% { transform: translate3d(-2397.3px,0,0); } 83.8889% { transform: translate3d(-2409.5px,0,0); } 84.1667% { transform: translate3d(-2421.49px,0,0); } 84.4444% { transform: translate3d(-2433.16px,0,0); } 84.7222% { transform: translate3d(-2444.43px,0,0); } 85.0000% { transform: translate3d(-2455.22px,0,0); } 85.2778% { transform: translate3d(-2465.45px,0,0); } 85.5556% { transform: translate3d(-2475.07px,0,0); } 85.8333% { transform: translate3d(-2484.04px,0,0); } 86.1111% { transform: translate3d(-2492.34px,0,0); } 86.3889% { transform: translate3d(-2499.94px,0,0); } 86.6667% { transform: translate3d(-2506.87px,0,0); } 86.9444% { transform: translate3d(-2513.15px,0,0); } 87.2222% { transform: translate3d(-2518.82px,0,0); } 87.5000% { transform: translate3d(-2523.93px,0,0); } 87.7778% { transform: translate3d(-2528.56px,0,0); } 88.0556% { transform: translate3d(-2532.79px,0,0); } 88.3333% { transform: translate3d(-2536.7px,0,0); } 88.6111% { transform: translate3d(-2540.4px,0,0); } 88.8889% { transform: translate3d(-2544px,0,0); } 89.1667% { transform: translate3d(-2547.6px,0,0); } 89.4444% { transform: translate3d(-2551.3px,0,0); } 89.7222% { transform: translate3d(-2555.21px,0,0); } 90.0000% { transform: translate3d(-2559.44px,0,0); } 90.2778% { transform: translate3d(-2564.07px,0,0); } 90.5556% { transform: translate3d(-2569.18px,0,0); } 90.8333% { transform: translate3d(-2574.85px,0,0); } 91.1111% { transform: translate3d(-2581.13px,0,0); } 91.3889% { transform: translate3d(-2588.06px,0,0); } 91.6667% { transform: translate3d(-2595.66px,0,0); } 91.9444% { transform: translate3d(-2603.96px,0,0); } 92.2222% { transform: translate3d(-2612.93px,0,0); } 92.5000% { transform: translate3d(-2622.55px,0,0); } 92.7778% { transform: translate3d(-2632.78px,0,0); } 93.0556% { transform: translate3d(-2643.57px,0,0); } 93.3333% { transform: translate3d(-2654.84px,0,0); } 93.6111% { transform: translate3d(-2666.51px,0,0); } 93.8889% { transform: translate3d(-2678.5px,0,0); } 94.1667% { transform: translate3d(-2690.7px,0,0); } 94.4444% { transform: translate3d(-2703px,0,0); } 94.7222% { transform: translate3d(-2715.3px,0,0); } 95.0000% { transform: translate3d(-2727.5px,0,0); } 95.2778% { transform: translate3d(-2739.49px,0,0); } 95.5556% { transform: translate3d(-2751.16px,0,0); } 95.8333% { transform: translate3d(-2762.43px,0,0); } 96.1111% { transform: translate3d(-2773.22px,0,0); } 96.3889% { transform: translate3d(-2783.45px,0,0); } 96.6667% { transform: translate3d(-2793.07px,0,0); } 96.9444% { transform: translate3d(-2802.04px,0,0); } 97.2222% { transform: translate3d(-2810.34px,0,0); } 97.5000% { transform: translate3d(-2817.94px,0,0); } 97.7778% { transform: translate3d(-2824.87px,0,0); } 98.0556% { transform: translate3d(-2831.15px,0,0); } 98.3333% { transform: translate3d(-2836.82px,0,0); } 98.6111% { transform: translate3d(-2841.93px,0,0); } 98.8889% { transform: translate3d(-2846.56px,0,0); } 99.1667% { transform: translate3d(-2850.79px,0,0); } 99.4444% { transform: translate3d(-2854.7px,0,0); } 99.7222% { transform: translate3d(-2858.4px,0,0); } 100% { transform: translate3d(-2862px,0,0); } }
+  .strip-track:hover { animation-play-state: running; }
+  @media (prefers-reduced-motion: reduce) { .loader-in, .strip-track { animation: none !important; } }
+  @media (max-width: 1150px) {
+    [data-hyttext] { flex-direction: column !important; align-items: flex-start !important; gap: 28px !important; }
+    [data-hyttext] > div:first-child { flex-wrap: wrap; }
+    [data-hyttext] > p { max-width: 640px !important; }
+  }
+  @media (max-width: 820px) {
+    [data-hfootgrid] { grid-template-columns: 1fr !important; gap: 32px !important; align-items: start !important; }
+    [data-hfoottitle] { font-size: 30px !important; }
+
+    [data-hhero] { padding: 92px 20px 80px !important; }
+    [data-hhero] p { font-size: 15px !important; }
+    [data-hhero] span[style*="0.22em"] { padding: 0 12px !important; }
+    [data-hcopy] { left: 20px !important; }
+    [data-hmail] { right: 20px !important; }
+    [data-hcat] { padding: 60px 20px 90px !important; }
+    [data-hcards] { flex-direction: column !important; gap: 18px !important; margin-top: 32px !important; }
+    [data-hcards] > div { flex: 0 0 auto !important; width: 100% !important; max-width: 100% !important; margin-top: 0 !important; }
+    [data-hyt] { padding: 120px 20px 34px !important; }
+    [data-hytbase] { background-image: linear-gradient(180deg, rgba(197,199,192,.6) 0px, rgba(197,199,192,.76) 28px, rgba(197,199,192,.9) 56px, rgb(197,199,192) 84px, #c3c5be 110px, #c3c5be 100%) !important; }
+    [data-hyttext] { margin-top: 30px !important; flex-direction: column !important; align-items: flex-start !important; gap: 22px !important; }
+    [data-hyttext] > div > div { font-size: 34px !important; }
+    [data-hyttext] p { max-width: 100% !important; margin-bottom: 0 !important; }
+    [data-hytgrid] { margin-top: 34px !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 20px 14px !important; }
+    [data-hytgrid] figcaption { font-size: 9px !important; letter-spacing: 0.12em !important; }
+    [data-hytgrid] figure > div { --po: .55 !important; }
+    [data-hytgrid] figure > div:active { --sc: 1.05 !important; --lift: -3px !important; }
+    [data-hytfoot] { margin-top: 26px !important; }
+    [data-hwhead] { margin: 0 20px 32px !important; }
+    [data-hwtext] { padding: 0 20px !important; }
+    [data-hwtext] > div { font-size: 34px !important; }
+    [data-hwmeta] { margin: 30px 20px 0 !important; flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; }
+    [data-hwmeta] > div { text-align: left !important; }
+    [data-hstrip] { padding-left: 20px !important; }
+    [data-hstrip] .strip-track > figure > div { width: 220px !important; height: 296px !important; }
+    [data-hstrip] .strip-track > figure > div > div { width: 300px !important; height: 296px !important; margin-left: -40px !important; }
+    [data-hreel] { margin: 30px 20px 0 !important; }
+    header > div { padding: 0 6px !important; gap: 12px !important; }
+    header img { height: 16px !important; }
+  }
+
+</style>
+<script src="./progress-bar.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<div style="position: relative; width: 100%; background: #0b1017; font-family: 'Instrument Sans', sans-serif;">
+
+  <div style="position: fixed; inset: 0; z-index: 0; overflow: hidden; background: #0b1017;">
+    <image-slot id="home-bg-poster" shape="rect" fit="cover" style="pointer-events: none; opacity: {{ posterO }};" placeholder="Fotograma de reserva del fondo"></image-slot>
+    <video ref="{{ bgRef }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position: absolute; left: 25%; top: 25%; width: 50%; height: 50%; object-fit: cover; display: block; opacity: {{ bgO }}; transition: opacity 900ms ease; filter: {{ heroFilter }}; transform: scale({{ heroScale2 }}) translateZ(0); transform-origin: 50% 50%; will-change: {{ heroWC }}; backface-visibility: hidden; pointer-events: none;"></video>
+    <canvas ref="{{ glRef }}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: {{ glO }}; transition: opacity 260ms linear; filter: {{ heroFilterGL }}; transform: scale({{ heroScale }}) translateZ(0); transform-origin: 50% 50%; pointer-events: none;"></canvas>
+    <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,16,23,.84) 0%, rgba(11,16,23,.34) 32%, rgba(11,16,23,.46) 64%, rgba(11,16,23,.92) 100%);"></div>
+    <div style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(118% 88% at 50% 44%, rgba(11,16,23,0) 36%, rgba(11,16,23,.78) 100%);"></div>
+    <div style="position: absolute; inset: 0; pointer-events: none; background: #0b1017; opacity: {{ deepDim }};"></div>
+  </div>
+
+  <section style="position: relative; z-index: 1; height: 100vh; overflow: hidden; pointer-events: none;">
+
+
+
+
+  <div data-hhero style="position: absolute; inset: 0; display: grid; align-items: end; justify-items: center; padding: 104px 64px 84px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 13px; width: min(1000px, 100%); text-align: center; pointer-events: auto;">
+
+
+      
+      <h1 style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-size: clamp(52px, 7.2vw, 104px); line-height: 1.02; letter-spacing: -0.045em; color: #ede6d8; text-wrap: pretty; transform: translateY({{ y1 }}); opacity: {{ o1 }}; transition: transform 800ms cubic-bezier(.16,1,.3,1) 140ms, opacity 800ms ease 140ms;">{{ heroA }}<br><span style="font-style: italic; color: #8fa3ba;">{{ heroB }}</span></h1>
+
+      <p style="margin: 0; width: min(620px, 100%); font-size: 17px; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: rgba(237,230,216,.72); transform: translateY({{ y2 }}); opacity: {{ o2 }}; transition: transform 800ms cubic-bezier(.16,1,.3,1) 260ms, opacity 800ms ease 260ms;">{{ heroP }}</p>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px; transform: translateY({{ y3 }}); opacity: {{ o3 }}; transition: transform 800ms cubic-bezier(.16,1,.3,1) 380ms, opacity 800ms ease 380ms;">
+        <a href="./works.html" onClick="{{ toWorks }}" style="display: flex; align-items: center; height: 46px; padding: 0 26px; border-radius: 999px; background: #ede6d8; white-space: nowrap; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0b1017; text-decoration: none; transition: background 340ms ease;" style-hover="background: #ffffff;">{{ ctaWorks }}</a>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: center; gap: 0; margin-top: 14px; opacity: {{ o3 }}; transition: opacity 700ms ease 520ms;">
+        <span style="padding: 0 26px; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(237,230,216,.5);">{{ disc1 }}</span>
+        <span style="width: 1px; height: 11px; background: rgba(237,230,216,.24);"></span>
+        <span style="padding: 0 26px; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(237,230,216,.5);">{{ disc2 }}</span>
+        <span style="width: 1px; height: 11px; background: rgba(237,230,216,.24);"></span>
+        <span style="padding: 0 26px; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(237,230,216,.5);">{{ disc3 }}</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div data-hcopy style="position: absolute; left: 64px; bottom: 26px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(237,230,216,.5); opacity: {{ o3 }}; transition: opacity 700ms ease 560ms; pointer-events: auto;">© {{ year }} Peybolfilms</div>
+
+  <div data-hmail style="position: absolute; right: 64px; bottom: 26px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; opacity: {{ o3 }}; transition: opacity 700ms ease 560ms; pointer-events: auto;">
+    <a href="mailto:peybolfilms@gmail.com" style="color: #ede6d8; border-bottom: 1px solid rgba(237,230,216,.4); padding-bottom: 2px;">{{ lblContact }}</a>
+  </div>
+  </section><section ref="{{ catRef }}" data-hcat style="position: relative; z-index: 2; background: transparent; padding: 92px 64px 170px; overflow: hidden;">
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 900px; z-index: -1; pointer-events: none; background-image: linear-gradient(180deg, rgba(11,16,23,0) 0%, rgba(11,16,23,.08) 22%, rgba(11,16,23,.24) 42%, rgba(11,16,23,.50) 62%, rgba(11,16,23,.78) 80%, rgba(11,16,23,.94) 92%, rgb(11,16,23) 100%);"></div>
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(34,48,63,.28); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #22303f;">
+      <span>{{ lblPath }}</span>
+      <span>PEYBOLFILMS</span>
+    </div>
+    <div data-hcards style="display: flex; justify-content: center; align-items: flex-start; gap: 44px; margin-top: 56px;">
+      <div style="flex: 1 1 0; max-width: 420px; margin-top: 18px; transform: translateY({{ cardY1 }}); transition: transform 520ms cubic-bezier(.22,1,.36,1); will-change: transform;"><div data-reveal="pop" style="opacity: 0; transform: translate(-64px, 46px) scale(.9) rotate(-2.4deg); transform-origin: 50% 100%; transition: opacity 900ms ease 0ms, transform 1150ms cubic-bezier(.16,1,.36,1) 0ms; will-change: transform;">
+        <a href="./portfolio/index.html" style="display: block; position: relative; width: 100%; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 3px; background: #cfc9c0; box-shadow: inset 0 0 0 1px rgba(34,48,63,.25); cursor: pointer; text-decoration: none; transform: translateY(0); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease; --z: 1; --lift: 0px; --lo: 1; --ly: 0px;" style-hover="transform: translateY(-14px); box-shadow: inset 0 0 0 1px rgba(34,48,63,.45), 0 26px 60px rgba(11,16,23,.28); --z: 1.055; --lo: 1; --ly: -4px;">
+          <div style="position: absolute; inset: 0; transform: scale(var(--z, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><image-slot id="cat-1" shape="rect" fit="cover" placeholder="Commercial still"></image-slot></div>
+          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, calc(-50% + var(--ly, 0px))); padding: 0 15px; height: 32px; display: flex; align-items: center; border: 1px solid rgba(237,230,216,.55); border-radius: 3px; background: rgba(22,17,12,.82); transition: transform 620ms cubic-bezier(.16,1,.3,1), letter-spacing 620ms ease; color: #ede6d8; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">{{ navPortfolio }}</div>
+        </a>
+      </div></div>
+      <div style="flex: 1 1 0; max-width: 460px; margin-top: 0px; transform: translateY({{ cardY2 }}); transition: transform 520ms cubic-bezier(.22,1,.36,1); will-change: transform;"><div data-reveal="pop" style="opacity: 0; transform: translate(0px, 46px) scale(.9) rotate(0deg); transform-origin: 50% 100%; transition: opacity 900ms ease 120ms, transform 1150ms cubic-bezier(.16,1,.36,1) 120ms; will-change: transform;">
+        <a href="./works.html" onClick="{{ toWorks }}" style="display: block; position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 3px; background: #cfc9c0; box-shadow: inset 0 0 0 1px rgba(34,48,63,.25); cursor: pointer; text-decoration: none; transform: translateY(0); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease; --z: 1; --lift: 0px; --lo: 1; --ly: 0px;" style-hover="transform: translateY(-14px); box-shadow: inset 0 0 0 1px rgba(34,48,63,.45), 0 26px 60px rgba(11,16,23,.28); --z: 1.055; --lo: 1; --ly: -4px;">
+          <div style="position: absolute; inset: 0; transform: scale(var(--z, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><image-slot id="cat-2-moto" shape="rect" fit="cover" src="./assets/works-card.jpg" placeholder="Works still"></image-slot></div>
+          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, calc(-50% + var(--ly, 0px))); padding: 0 15px; height: 32px; display: flex; align-items: center; border: 1px solid rgba(237,230,216,.55); border-radius: 3px; background: rgba(22,17,12,.82); transition: transform 620ms cubic-bezier(.16,1,.3,1), letter-spacing 620ms ease; color: #ede6d8; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">{{ navWorks }}</div>
+        </a>
+      </div></div>
+      <div style="flex: 1 1 0; max-width: 420px; margin-top: 30px; transform: translateY({{ cardY3 }}); transition: transform 520ms cubic-bezier(.22,1,.36,1); will-change: transform;"><div data-reveal="pop" style="opacity: 0; transform: translate(64px, 46px) scale(.9) rotate(2.4deg); transform-origin: 50% 100%; transition: opacity 900ms ease 240ms, transform 1150ms cubic-bezier(.16,1,.36,1) 240ms; will-change: transform;">
+        <a href="./about/index.html" style="display: block; position: relative; width: 100%; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 3px; background: #cfc9c0; box-shadow: inset 0 0 0 1px rgba(34,48,63,.25); cursor: pointer; text-decoration: none; transform: translateY(0); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease; --z: 1; --lift: 0px; --lo: 1; --ly: 0px;" style-hover="transform: translateY(-14px); box-shadow: inset 0 0 0 1px rgba(34,48,63,.45), 0 26px 60px rgba(11,16,23,.28); --z: 1.055; --lo: 1; --ly: -4px;">
+          <div style="position: absolute; inset: 0; transform: scale(var(--z, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><image-slot id="cat-3" shape="rect" fit="cover" placeholder="Documentary still"></image-slot></div>
+          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, calc(-50% + var(--ly, 0px))); padding: 0 15px; height: 32px; display: flex; align-items: center; border: 1px solid rgba(237,230,216,.55); border-radius: 3px; background: rgba(22,17,12,.82); transition: transform 620ms cubic-bezier(.16,1,.3,1), letter-spacing 620ms ease; color: #ede6d8; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; pointer-events: none;">{{ navAbout }}</div>
+        </a>
+      </div></div>
+    </div></div>
+  </section>
+
+
+  <section ref="{{ workRef }}" style="position: relative; z-index: 2; background: transparent; padding: 40px 0 150px; overflow: hidden;">
+    <div aria-hidden="true" style="position: absolute; inset: 0; z-index: -1; pointer-events: none; background: #0b1017;"></div>
+    <div aria-hidden="true" data-hworkfade style="position: absolute; left: 0; right: 0; bottom: 0; height: 520px; z-index: -1; pointer-events: none; background-image: linear-gradient(180deg, rgba(197,199,192,0) 0%, rgba(197,199,192,.05) 34%, rgba(197,199,192,.14) 56%, rgba(197,199,192,.28) 74%, rgba(197,199,192,.44) 88%, rgba(197,199,192,.6) 100%);"></div>
+
+    <div data-hwhead style="position: relative; z-index: 1; margin: 0 64px 54px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(143,163,186,.3); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8fa3ba;">
+      <span data-reveal="up" style="display: inline-block; opacity: 0; transform: translateX(60px); transition: opacity 700ms ease, transform 900ms cubic-bezier(.16,1,.3,1);">{{ lblDisc }}</span>
+      <span>SINCE 2023</span>
+    </div>
+    <div data-hwtext style="padding: 0 64px;">
+      <div data-reveal="up" style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-size: 84px; line-height: 1.12; letter-spacing: -0.035em; color: #ede6d8; opacity: 0; transform: translateX(180px) skewX(-5deg); transition: opacity 900ms ease, transform 1150ms cubic-bezier(.16,1,.3,1);">{{ wLine1 }}</div>
+      <div data-reveal="up" data-reveal-delay="110ms" style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-style: italic; font-size: 84px; line-height: 1.12; letter-spacing: -0.035em; color: #8fa3ba; opacity: 0; transform: translateX(280px) skewX(-5deg); transition: opacity 900ms ease 140ms, transform 1200ms cubic-bezier(.16,1,.3,1) 140ms;">{{ wLine2 }}</div>
+    </div>
+    <div data-hwmeta style="margin: 54px 64px 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;">
+      <p data-reveal="up" data-reveal-delay="220ms" style="margin: 0; max-width: 560px; font-size: 17px; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: #ede6d8; opacity: 0; transform: translateX(120px); transition: opacity 800ms ease 300ms, transform 1000ms cubic-bezier(.16,1,.3,1) 300ms;">{{ wPara }}</p>
+      <div data-reveal="up" data-reveal-delay="300ms" style="text-align: right; opacity: 0; transform: translateX(120px); transition: opacity 800ms ease 400ms, transform 1000ms cubic-bezier(.16,1,.3,1) 400ms;">
+        <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8fa3ba;">{{ lblTime }}</div>
+        <div style="margin-top: 6px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.14em; font-variant-numeric: tabular-nums; color: #ede6d8;">{{ clock }}</div>
+      </div>
+    </div>
+    <div style="margin-top: 44px; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 110px, #000 calc(100% - 110px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 110px, #000 calc(100% - 110px), transparent 100%);">
+      <div data-hstrip style="overflow: hidden; padding-left: 64px;">
+        <div class="strip-track" style="display: flex; align-items: flex-start; gap: 18px; width: max-content; animation: stripStep 22.5s linear infinite; will-change: transform; backface-visibility: hidden;">
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-1" shape="rect" fit="cover" placeholder="Project 01"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>01 — NATURE</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-2" shape="rect" fit="cover" placeholder="Project 02"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>02 — WINTER SPORTS</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-3" shape="rect" fit="cover" placeholder="Project 03"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>03 — MOTOR SPORTS</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-4" shape="rect" fit="cover" placeholder="Project 04"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>04 — SURFING</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-5" shape="rect" fit="cover" placeholder="Project 05"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>05 — BRAND</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-6" shape="rect" fit="cover" placeholder="Project 06"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>06 — SKIING</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-7" shape="rect" fit="cover" placeholder="Project 07"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>07 — CARS</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-8" shape="rect" fit="cover" placeholder="Project 08"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>08 — Commercial</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><image-slot id="work-9" shape="rect" fit="cover" placeholder="Project 09"></image-slot></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>09 — Documentary</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-1b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>01 — NATURE</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-2b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>02 — WINTER SPORTS</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-3b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>03 — MOTOR SPORTS</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-4b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>04 — SURFING</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-5b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>05 — BRAND</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-6b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>06 — SKIING</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-7b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>07 — CARS</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-8b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>08 — Commercial</span><span>2026</span></figcaption>
+        </figure>
+        <figure style="flex: 0 0 auto; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 300px; height: 400px; overflow: hidden; border-radius: 2px; background: #161c24; --ins: -80px; transition: width 640ms cubic-bezier(.16,1,.3,1);" style-hover="width: 460px; --ins: 0px;"><div style="width: 460px; height: 400px; margin-left: var(--ins, -80px); transition: margin-left 640ms cubic-bezier(.16,1,.3,1);"><img id="work-9b" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div></div>
+          <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(237,230,216,.72);"><span>09 — Documentary</span><span>2026</span></figcaption>
+        </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-hyt style="position: relative; z-index: 2; background: transparent; padding: 150px 64px 40px; overflow: hidden;">
+    <div aria-hidden="true" data-hytbase style="position: absolute; top: -2px; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; background-color: rgb(11,16,23); background-image: linear-gradient(180deg, rgba(197,199,192,.6) 0px, rgba(197,199,192,.73) 34px, rgba(197,199,192,.85) 66px, rgba(197,199,192,.94) 96px, rgb(197,199,192) 124px, #c3c5be 150px, #c3c5be 100%);"></div>
+    <div aria-hidden="true" style="position: absolute; top: -2px; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%271000%27 height=%271000%27%3E%3Cfilter id=%27m%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.004 0.011%27 numOctaves=%275%27 seed=%2713%27/%3E%3CfeColorMatrix type=%27saturate%27 values=%270%27/%3E%3CfeComponentTransfer%3E%3CfeFuncA type=%27gamma%27 exponent=%273%27 amplitude=%271.6%27/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width=%271000%27 height=%271000%27 filter=%27url(%23m)%27/%3E%3C/svg%3E'); background-size: 1300px 1300px; opacity: .6; mix-blend-mode: soft-light; -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.2) 0px, rgba(0,0,0,.5) 50px, rgba(0,0,0,.8) 100px, rgba(0,0,0,1) 150px, rgba(0,0,0,1) calc(100% - 380px), rgba(0,0,0,.55) calc(100% - 160px), rgba(0,0,0,0) 100%); mask-image: linear-gradient(180deg, rgba(0,0,0,.2) 0px, rgba(0,0,0,.5) 50px, rgba(0,0,0,.8) 100px, rgba(0,0,0,1) 150px, rgba(0,0,0,1) calc(100% - 380px), rgba(0,0,0,.55) calc(100% - 160px), rgba(0,0,0,0) 100%);"></div>
+    <div aria-hidden="true" style="position: absolute; top: -2px; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27200%27 height=%27200%27%3E%3Cfilter id=%27g%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3CfeColorMatrix type=%27saturate%27 values=%270%27/%3E%3C/filter%3E%3Crect width=%27200%27 height=%27200%27 filter=%27url(%23g)%27/%3E%3C/svg%3E'); background-size: 170px 170px; opacity: .14; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.2) 0px, rgba(0,0,0,.5) 50px, rgba(0,0,0,.8) 100px, rgba(0,0,0,1) 150px, rgba(0,0,0,1) calc(100% - 380px), rgba(0,0,0,.55) calc(100% - 160px), rgba(0,0,0,0) 100%); mask-image: linear-gradient(180deg, rgba(0,0,0,.2) 0px, rgba(0,0,0,.5) 50px, rgba(0,0,0,.8) 100px, rgba(0,0,0,1) 150px, rgba(0,0,0,1) calc(100% - 380px), rgba(0,0,0,.55) calc(100% - 160px), rgba(0,0,0,0) 100%);"></div>
+    <div data-hythead style="position: relative; z-index: 1; display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(34,44,53,.4); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #141c24;">
+      <span data-reveal="up" style="display: inline-block; opacity: 0; transform: translateX(60px); transition: opacity 700ms ease, transform 900ms cubic-bezier(.16,1,.3,1);">{{ lblYT }}</span>
+      <span>YOUTUBE</span>
+    </div>
+    <div data-hyttext style="position: relative; z-index: 1; margin-top: 44px; display: flex; align-items: flex-end; justify-content: space-between; gap: 56px;">
+      <div style="display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap;">
+        <div>
+        <div data-reveal="up" style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-size: 64px; line-height: 1.12; letter-spacing: -0.035em; color: #1e2831; opacity: 0; transform: translateX(140px) skewX(-5deg); transition: opacity 900ms ease, transform 1150ms cubic-bezier(.16,1,.3,1);">{{ yLine1 }}</div>
+        <div data-reveal="up" data-reveal-delay="110ms" style="font-family: 'Instrument Sans', sans-serif; font-weight: 500; font-style: italic; font-size: 64px; line-height: 1.12; letter-spacing: -0.035em; color: #46535e; opacity: 0; transform: translateX(220px) skewX(-5deg); transition: opacity 900ms ease 140ms, transform 1200ms cubic-bezier(.16,1,.3,1) 140ms;">{{ yLine2 }}</div>
+        </div>
+        <a data-ytcard data-reveal="up" data-reveal-delay="180ms" data-ytnowrap="1" href="https://www.youtube.com/@peybolfilms" target="_blank" rel="noopener" style="display: flex; flex: 0 0 auto; align-items: center; gap: 16px; margin-bottom: 8px; padding: 14px 34px 14px 14px; white-space: nowrap; text-decoration: none; border: 1px solid rgba(30,40,49,.2); border-radius: 999px; background: rgba(255,255,255,.28); box-shadow: 0 1px 0 rgba(255,255,255,.45) inset; opacity: 0; transform: translateX(80px); transition: opacity 800ms ease 240ms, transform 1000ms cubic-bezier(.16,1,.3,1) 240ms, background 400ms ease, border-color 400ms ease;" style-hover="background: rgba(255,255,255,.5); border-color: rgba(30,40,49,.38);">
+          <div style="flex: 0 0 auto; width: 58px; height: 58px; border-radius: 999px; overflow: hidden; background: #b7b9ae;"><image-slot id="yt-avatar" shape="circle" fit="cover" src="./assets/yt-avatar.jpg" style="--pos: 50% 28%;" placeholder="Foto de perfil del canal"></image-slot></div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div style="font-family: Roboto, sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; color: #0f0f0f;">byPeybol</div>
+            <div style="font-family: Roboto, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0; color: #3f4a54;">@peybolfilms · 9,89&nbsp;K suscriptores</div>
+            <div style="font-family: Roboto, sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; color: #3f4a54;">Exploring to see the world through my mind</div>
+          </div>
+        </a>
+      </div>
+      <p data-reveal="up" data-reveal-delay="200ms" style="margin: 0 0 8px; max-width: 560px; font-size: 17px; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: #1d262f; opacity: 0; transform: translateX(120px); transition: opacity 800ms ease 280ms, transform 1000ms cubic-bezier(.16,1,.3,1) 280ms;">{{ yPara }}</p>
+    </div>
+    <div data-hytgrid style="position: relative; z-index: 1; margin-top: 52px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 22px;">
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; gap: 13px; opacity: 0; transform: translateY(46px); transition: opacity 760ms ease, transform 980ms cubic-bezier(.16,1,.3,1);">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 3px; background: #b7b9ae; --sc: 1; --po: 0; --lift: 0px; transform: translateY(var(--lift)); box-shadow: 0 0 0 1px rgba(40,52,64,.12); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease;" style-hover="--sc: 1.06; --po: 1; --lift: -6px; box-shadow: 0 18px 40px rgba(34,48,63,.28), 0 0 0 1px rgba(40,52,64,.2);">
+          <div style="position: absolute; inset: 0; transform: scale(var(--sc, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><img src="./assets/personal/valorar.jpg" alt="VALORAR" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,16,23,0) 42%, rgba(11,16,23,.62) 100%); opacity: var(--po, 0); transition: opacity 520ms ease;"></div>
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #222c35;"><span>01. {{ ytA }}</span><span>2025</span></figcaption>
+      </figure>
+      <figure data-reveal="up" data-reveal-delay="90ms" style="margin: 0; display: flex; flex-direction: column; gap: 13px; opacity: 0; transform: translateY(46px); transition: opacity 760ms ease 90ms, transform 980ms cubic-bezier(.16,1,.3,1) 90ms;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 3px; background: #b7b9ae; --sc: 1; --po: 0; --lift: 0px; transform: translateY(var(--lift)); box-shadow: 0 0 0 1px rgba(40,52,64,.12); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease;" style-hover="--sc: 1.06; --po: 1; --lift: -6px; box-shadow: 0 18px 40px rgba(34,48,63,.28), 0 0 0 1px rgba(40,52,64,.2);">
+          <div style="position: absolute; inset: 0; transform: scale(var(--sc, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><img src="./assets/personal/split.jpg" alt="SPLIT" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,16,23,0) 42%, rgba(11,16,23,.62) 100%); opacity: var(--po, 0); transition: opacity 520ms ease;"></div>
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #222c35;"><span>02. {{ ytB }}</span><span>2026</span></figcaption>
+      </figure>
+      <figure data-reveal="up" data-reveal-delay="180ms" style="margin: 0; display: flex; flex-direction: column; gap: 13px; opacity: 0; transform: translateY(46px); transition: opacity 760ms ease 180ms, transform 980ms cubic-bezier(.16,1,.3,1) 180ms;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 3px; background: #b7b9ae; --sc: 1; --po: 0; --lift: 0px; transform: translateY(var(--lift)); box-shadow: 0 0 0 1px rgba(40,52,64,.12); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease;" style-hover="--sc: 1.06; --po: 1; --lift: -6px; box-shadow: 0 18px 40px rgba(34,48,63,.28), 0 0 0 1px rgba(40,52,64,.2);">
+          <div style="position: absolute; inset: 0; transform: scale(var(--sc, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><img src="./assets/personal/nada.jpg" alt="NADA" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,16,23,0) 42%, rgba(11,16,23,.62) 100%); opacity: var(--po, 0); transition: opacity 520ms ease;"></div>
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #222c35;"><span>03. {{ ytC }}</span><span>2025</span></figcaption>
+      </figure>
+      <figure data-reveal="up" data-reveal-delay="60ms" style="margin: 0; display: flex; flex-direction: column; gap: 13px; opacity: 0; transform: translateY(46px); transition: opacity 760ms ease 60ms, transform 980ms cubic-bezier(.16,1,.3,1) 60ms;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 3px; background: #b7b9ae; --sc: 1; --po: 0; --lift: 0px; transform: translateY(var(--lift)); box-shadow: 0 0 0 1px rgba(40,52,64,.12); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease;" style-hover="--sc: 1.06; --po: 1; --lift: -6px; box-shadow: 0 18px 40px rgba(34,48,63,.28), 0 0 0 1px rgba(40,52,64,.2);">
+          <div style="position: absolute; inset: 0; transform: scale(var(--sc, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><img src="./assets/personal/vertigo.jpg" alt="VERTIGO" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,16,23,0) 42%, rgba(11,16,23,.62) 100%); opacity: var(--po, 0); transition: opacity 520ms ease;"></div>
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #222c35;"><span>04. {{ ytD }}</span><span>2025</span></figcaption>
+      </figure>
+      <figure data-reveal="up" data-reveal-delay="150ms" style="margin: 0; display: flex; flex-direction: column; gap: 13px; opacity: 0; transform: translateY(46px); transition: opacity 760ms ease 150ms, transform 980ms cubic-bezier(.16,1,.3,1) 150ms;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 3px; background: #b7b9ae; --sc: 1; --po: 0; --lift: 0px; transform: translateY(var(--lift)); box-shadow: 0 0 0 1px rgba(40,52,64,.12); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease;" style-hover="--sc: 1.06; --po: 1; --lift: -6px; box-shadow: 0 18px 40px rgba(34,48,63,.28), 0 0 0 1px rgba(40,52,64,.2);">
+          <div style="position: absolute; inset: 0; transform: scale(var(--sc, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><img src="./assets/personal/skye.jpg" alt="SKYE" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,16,23,0) 42%, rgba(11,16,23,.62) 100%); opacity: var(--po, 0); transition: opacity 520ms ease;"></div>
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #222c35;"><span>05. {{ ytE }}</span><span>2026</span></figcaption>
+      </figure>
+      <figure data-reveal="up" data-reveal-delay="240ms" style="margin: 0; display: flex; flex-direction: column; gap: 13px; opacity: 0; transform: translateY(46px); transition: opacity 760ms ease 240ms, transform 980ms cubic-bezier(.16,1,.3,1) 240ms;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 3px; background: #b7b9ae; --sc: 1; --po: 0; --lift: 0px; transform: translateY(var(--lift)); box-shadow: 0 0 0 1px rgba(40,52,64,.12); transition: transform 620ms cubic-bezier(.16,1,.3,1), box-shadow 620ms ease;" style-hover="--sc: 1.06; --po: 1; --lift: -6px; box-shadow: 0 18px 40px rgba(34,48,63,.28), 0 0 0 1px rgba(40,52,64,.2);">
+          <div style="position: absolute; inset: 0; transform: scale(var(--sc, 1)); transition: transform 900ms cubic-bezier(.16,1,.3,1);"><img src="./assets/personal/acciones.jpg" alt="ACCIONES" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(11,16,23,0) 42%, rgba(11,16,23,.62) 100%); opacity: var(--po, 0); transition: opacity 520ms ease;"></div>
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #222c35;"><span>06. {{ ytF }}</span><span>2024</span></figcaption>
+      </figure>
+    </div>
+    <div data-hytfoot style="position: relative; z-index: 1; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(34,44,53,.32); display: flex; align-items: baseline; justify-content: space-between; gap: 24px; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #2a333c;">
+      <span>@PEYBOLFILMS</span>
+    </div>
+  </section>
+
+  <section id="contact" data-hfoot style="position: relative; z-index: 2; font-family: 'Instrument Sans', sans-serif; background-color: #c3c5be; background-image: linear-gradient(180deg, rgba(34,48,63,0) 0%, rgba(34,48,63,.08) 55%, rgba(34,48,63,.2) 100%); padding: 0 0 70px;">
+    <div style="position: relative; max-width: 1560px; margin: 0 auto; padding: 56px 34px 0;">
+      <div data-reveal="up" data-hfootgrid style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 60px; align-items: end; padding-top: 44px; opacity: 0; transform: translateY(40px); transition: opacity 800ms ease, transform 1000ms cubic-bezier(.16,1,.3,1);">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <span style="font-family: 'Instrument Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(34,44,53,.6);">{{ lblContact }}</span>
+          <h2 data-hfoottitle style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 56px; line-height: 1.02; font-weight: 600; letter-spacing: -0.04em; color: #1e2831; text-wrap: pretty;">{{ contactLine }}</h2>
+          <a href="mailto:peybolfilms@gmail.com" style="width: fit-content; font-family: 'Instrument Sans', sans-serif; font-size: 19px; color: #1e2831; border-bottom: 1px solid rgba(34,44,53,.38); padding-bottom: 3px; transition: border-color 300ms ease, color 300ms ease;" style-hover="color: #46535e; border-color: #46535e;">peybolfilms@gmail.com</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <a href="./works.html" style="display: flex; align-items: center; height: 42px; padding: 0 22px; border-radius: 999px; background: #1e2831; color: #ede6d8; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 300ms ease;" style-hover="opacity: .84; color: #ede6d8;">{{ ctaWorks }}</a>
+          <a href="./about/index.html" style="display: flex; align-items: center; height: 42px; padding: 0 22px; border: 1px solid rgba(34,44,53,.38); border-radius: 999px; color: #1e2831; font-size: 14px; font-weight: 500; text-decoration: none; transition: background 320ms ease;" style-hover="background: rgba(34,44,53,.08); color: #1e2831;">{{ ctaAbout }}</a>
+        </div>
+      </div>
+      <div style="padding-top: 46px; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'Instrument Sans', sans-serif; color: rgba(30,40,49,.82);">© 2026 Peybolfilms</div>
+    </div>
+  </section>
+
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; padding: 10px 18px 0; transform: translateY({{ barY }}); opacity: {{ barO }}; pointer-events: {{ barPE }}; transition: transform 600ms cubic-bezier(.16,1,.3,1), opacity 500ms ease;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; width: 100%; max-width: 1560px; margin: 0 auto; height: 50px; padding: 0 26px; background: transparent;">
+      <a href="#home" aria-label="Peybolfilms home" style="display: flex; align-items: center; height: 50px; text-decoration: none;">
+        <img src="./assets/wordmark-paper.png" alt="Peybolfilms" style="height: 19px; width: auto; display: block; filter: drop-shadow(0 2px 12px rgba(11,16,23,.55));">
+      </a>
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display: flex; align-items: center; gap: 26px;">
+        <a href="./portfolio/index.html" style="--rollY: 0%; display: block; height: 30px; overflow: hidden; text-decoration: none;" style-hover="--rollY: -100%;">
+          <span style="display: block; transform: translateY(var(--rollY)); transition: transform 420ms cubic-bezier(.6,0,.2,1);">
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">{{ navPortfolio }}</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">{{ navPortfolio }}</span>
+          </span>
+        </a>
+        <a href="./works.html" onClick="{{ toWorks }}" style="--rollY: 0%; display: block; height: 30px; overflow: hidden; text-decoration: none;" style-hover="--rollY: -100%;">
+          <span style="display: block; transform: translateY(var(--rollY)); transition: transform 420ms cubic-bezier(.6,0,.2,1);">
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">{{ navWorks }}</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">{{ navWorks }}</span>
+          </span>
+        </a>
+        <a href="./about/index.html" style="--rollY: 0%; display: block; height: 30px; overflow: hidden; text-decoration: none;" style-hover="--rollY: -100%;">
+          <span style="display: block; transform: translateY(var(--rollY)); transition: transform 420ms cubic-bezier(.6,0,.2,1);">
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">{{ navAbout }}</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">{{ navAbout }}</span>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/bypeybol/" target="_blank" rel="noreferrer" style="display: flex; align-items: center; height: 32px; padding: 0 15px; border: 1px solid rgba(237,230,216,.55); border-radius: 3px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-decoration: none; transition: background 380ms ease, color 380ms ease;" style-hover="background: #ede6d8; color: #131a23;">Instagram</a>
+        <div role="group" aria-label="Language" style="display: flex; align-items: center; gap: 2px; height: 32px; padding: 0 3px; border: 1px solid rgba(237,230,216,.28); border-radius: 3px;">
+          <button type="button" onClick="{{ setEN }}" style="display: flex; align-items: center; height: 24px; padding: 0 9px; border: 0; border-radius: 2px; background: {{ enBg }}; color: {{ enFg }}; font-family: 'Instrument Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 300ms ease, color 300ms ease;">EN</button>
+          <button type="button" onClick="{{ setES }}" style="display: flex; align-items: center; height: 24px; padding: 0 9px; border: 0; border-radius: 2px; background: {{ esBg }}; color: {{ esFg }}; font-family: 'Instrument Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 300ms ease, color 300ms ease;">ES</button>
+        </div>
+      </nav>
+      </sc-if>
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 8px; border: 1px solid rgba(237,230,216,.4); border-radius: 3px; background: transparent; cursor: pointer;">
+          <span style="display: block; height: 1.5px; background: #ede6d8;"></span>
+          <span style="display: block; height: 1.5px; background: #ede6d8;"></span>
+        </button>
+      </sc-if>
+    </div>
+  </header>
+
+  <a href="#home" aria-label="Peybolfilms home" style="position: fixed; top: 16px; left: 50%; z-index: 41; display: block; transform: translateX(-50%); opacity: {{ markO }}; pointer-events: {{ markPE }}; transition: opacity 560ms ease, filter 560ms ease; filter: blur({{ markBlur }}) drop-shadow(0 2px 14px rgba(22,17,12,.45));">
+    <img src="./assets/mark-paper.png" alt="Peybolfilms" style="height: 52px; width: auto; display: block;">
+  </a>
+
+  <div style="position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 0 26px; background: rgba(5,7,10,.97); backdrop-filter: blur(14px); opacity: {{ menuO }}; pointer-events: {{ menuPE }}; transition: opacity 460ms ease;">
+    <button type="button" onClick="{{ closeMenu }}" aria-label="Close menu" style="position: absolute; top: 18px; right: 22px; width: 44px; height: 44px; border: 1px solid rgba(237,230,216,.3); border-radius: 3px; background: transparent; color: #ede6d8; font-family: 'Instrument Sans', sans-serif; font-size: 17px; cursor: pointer;">×</button>
+    <a href="./portfolio/index.html" onClick="{{ closeMenu }}" style="padding: 11px 0; font-family: 'Instrument Sans', sans-serif; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">Portfolio</a>
+    <a href="./works.html" onClick="{{ toWorksMenu }}" style="padding: 11px 0; font-family: 'Instrument Sans', sans-serif; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">Works</a>
+    <a href="./about/index.html" onClick="{{ closeMenu }}" style="padding: 11px 0; font-family: 'Instrument Sans', sans-serif; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">About</a>
+    <a href="https://www.instagram.com/bypeybol/" target="_blank" rel="noreferrer" style="padding: 11px 0; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #8fa3ba;">Instagram</a>
+    <div role="group" aria-label="Language" style="display: flex; align-items: center; gap: 3px; width: fit-content; margin-top: 20px; height: 36px; padding: 0 4px; border: 1px solid rgba(237,230,216,.28); border-radius: 3px;">
+      <button type="button" onClick="{{ setEN }}" style="display: flex; align-items: center; height: 44px; padding: 0 15px; border: 0; border-radius: 2px; background: {{ enBg }}; color: {{ enFg }}; font-family: 'Instrument Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer;">EN</button>
+      <button type="button" onClick="{{ setES }}" style="display: flex; align-items: center; height: 44px; padding: 0 15px; border: 0; border-radius: 2px; background: {{ esBg }}; color: {{ esFg }}; font-family: 'Instrument Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer;">ES</button>
+    </div>
+  </div>
+
+  <sc-if value="{{ showLoader }}" hint-placeholder-val="{{ true }}">
+  <div style="position: fixed; inset: 0; z-index: 90; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; background: #ffffff; opacity: {{ loaderO }}; pointer-events: {{ loaderPE }}; transition: opacity 620ms ease 60ms;">
+    <div class="loader-in" style="display: flex; flex-direction: column; align-items: center; gap: 26px; animation: loaderIn 1000ms cubic-bezier(.22,1,.36,1) both; filter: blur({{ loaderBlur }}); transition: filter 620ms ease;">
+    <img src="./assets/loader-lockup.png" fetchpriority="high" decoding="sync" alt="Peybolfilms — post production studio, Spain" style="width: min(760px, 86vw); display: block;">
+    <div style="width: min(760px, 86vw);">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Instrument Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #22303f;">
+        <span>Film Production Studio / Spain</span>
+        <span style="font-variant-numeric: tabular-nums; color: #16110c;">{{ pctLabel }}</span>
+      </div>
+      <div style="margin-top: 10px; height: 1px; width: 100%; background: rgba(22,17,12,.16);">
+        <div style="height: 1px; width: {{ pctWidth }}; background: #5c7086; transition: width 180ms linear;"></div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;tagline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Film Production Studio&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero copy&quot;},
+  &quot;headlineLine1&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Stories,&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero copy&quot;},
+  &quot;headlineLine2&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;cast in bronze.&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero copy&quot;},
+  &quot;subline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Peybolfilms — commercial · fashion · documentary&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero copy&quot;},
+  &quot;contactLabel&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Say hello&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero copy&quot;},
+  &quot;contactEmail&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;peybolfilms@gmail.com&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero copy&quot;},
+  &quot;catEyebrow&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Disciplines&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Disciplines&quot;},
+  &quot;catLabel1&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Commercial&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Disciplines&quot;},
+  &quot;catLabel2&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Fashion&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Disciplines&quot;},
+  &quot;catLabel3&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Documentary&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Disciplines&quot;},
+  &quot;workLine1&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Work that&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Work&quot;},
+  &quot;workLine2&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;speaks for us.&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Work&quot;},
+  &quot;navPortfolio&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Portfolio&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Nav pills&quot;},
+  &quot;navWorks&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Works&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Nav pills&quot;},
+  &quot;navAbout&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;About&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Nav pills&quot;},
+  &quot;navInstagram&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Instagram&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Nav pills&quot;},
+  &quot;instagramUrl&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://www.instagram.com/bypeybol/&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Nav pills&quot;},
+  &quot;loaderCaption&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Film Production Studio / Spain&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Loading&quot;},
+  &quot;flipSeconds&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 4, &quot;min&quot;: 2, &quot;max&quot;: 12, &quot;step&quot;: 1, &quot;unit&quot;: &quot;s&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Motion&quot;}
+}">
+class Component extends DCLogic {
+  catRef = React.createRef();
+  workRef = React.createRef();
+  horseVideoRef = React.createRef();
+  artRectRef = React.createRef();
+  artVideoRef = React.createRef();
+
+  // map the cover-fitted video rect (1280x720, object-position 34% 58%) onto the viewport
+  _syncArtRect = () => {
+    const el = this.artRectRef.current;
+    if (!el) return;
+    const p = el.parentElement;
+    if (!p) return;
+    const cw = p.clientWidth, ch = p.clientHeight;
+    const scale = Math.max(cw / 1280, ch / 720);
+    const w = 1280 * scale, h = 720 * scale;
+    el.style.width = w + 'px';
+    el.style.height = h + 'px';
+    el.style.left = (cw - w) * 0.34 + 'px';
+    el.style.top = (ch - h) * 0.58 + 'px';
+
+    // Wall and pedestal never move — only the sculpture does. Clip the base
+    // video to that region so the compositor repaints a small box per frame
+    // instead of the whole viewport; the static plate covers the rest.
+    const bv = this.horseVideoRef.current;
+    if (bv) {
+      const L = (cw - w) * 0.34, T = (ch - h) * 0.58;
+      const kx = w / 1280, ky = h / 720;
+      bv.style.clipPath = 'inset(' + Math.max(0, T + 150 * ky) + 'px ' + Math.max(0, cw - (L + 862 * kx)) + 'px 0px ' + Math.max(0, L + 418 * kx) + 'px)';
+    }
+  };
+
+
+  bgRef = React.createRef();
+  glRef = React.createRef();
+  chipRef = React.createRef();
+
+  state = { lang: (typeof localStorage !== 'undefined' && localStorage.getItem('pf-lang')) || 'en', liquid: false, up: false, sy: 0, catP: 0, workP: 0, showLoader: true, pct: 0, loaded: false, revealed: false, showMark: false, menu: false, w: typeof window !== 'undefined' ? window.innerWidth : 1440 };
+
+  componentDidMount() {
+    this._syncArtRect();
+    // self-scheduling so every frame gets exactly the same dwell, even if a manual
+    // pick or a re-render lands mid-cycle (a shared setInterval drifts and double-fires)
+    // alternating rhythm: odd frames 5s / even 1.5s, then the pattern swaps
+    // every time the loop comes back around to frame 01
+    this._artCycle = 0;
+    this._artDur = (idx) => {
+      const i = idx == null ? (this.state.slide || 0) : idx;
+      const oddFrame = i % 2 === 0; // frame 01, 03, 05, 07
+      const longOne = this._artCycle === 0 ? oddFrame : !oddFrame;
+      return longOne ? 5000 : 1500;
+    };
+    this._artStep = (idx) => {
+      clearTimeout(this._artT);
+      this._artT = setTimeout(() => {
+        const next = (((idx == null ? (this.state.slide || 0) : idx)) + 1) % 7;
+        if (next === 0) this._artCycle = this._artCycle ? 0 : 1;
+        this.setState({ slide: next });
+        this._artStep(next);
+      }, this._artDur(idx));
+    };
+    this._artStep();
+    window.addEventListener('pageshow', this._onPageShow);
+    this._loadBg();
+    this._initLiquid();
+    // backdrop-filter over a playing video forces a blurred re-read of the frame
+    // buffer on every video frame AND every scroll frame — unaffordable in the
+    // software-composited preview pane, so swap it for a solid tint there
+    try {
+      if (this._emb()) {
+        const bv = this.bgRef.current;
+        if (bv) { bv.style.left = '0'; bv.style.top = '0'; bv.style.width = '100%'; bv.style.height = '100%'; bv.style.transform = 'translateZ(0)'; }
+      }
+      if (window.self !== window.top && this.chipRef.current) {
+        this.chipRef.current.style.backdropFilter = 'none';
+        this.chipRef.current.style.webkitBackdropFilter = 'none';
+        this.chipRef.current.style.background = 'rgba(24,31,41,.72)';
+      }
+    } catch (err) {}
+    this._onDragOver = (e) => { e.preventDefault(); };
+    this._onDropBg = (e) => {
+      const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f && /^video\//.test(f.type)) { e.preventDefault(); this._setBg(f); }
+    };
+    window.addEventListener('dragover', this._onDragOver);
+    window.addEventListener('drop', this._onDropBg);
+    this._onResize = () => { this._syncArtRect(); this.setState({ w: window.innerWidth }); };
+    window.addEventListener('resize', this._onResize);
+
+    document.body.style.overflow = 'hidden';
+    const prog = (el) => {
+      if (!el) return 0;
+      const r = el.getBoundingClientRect(), vh = window.innerHeight;
+      return Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
+    };
+    this._onScroll = () => {
+      const raw0 = window.scrollY;
+      if (this._lastY == null) this._lastY = raw0;
+      if (raw0 < this._lastY - 4) this._up = true;
+      else if (raw0 > this._lastY + 4) this._up = false;
+      this._lastY = raw0;
+      if (this._up !== this.state.up) this.setState({ up: this._up });
+      if (!this._sRaf) this._sTarget = window.scrollY;
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => {
+        this._raf = null;
+        const step = this._emb() ? 48 : 10;
+        const q = this._emb() ? 20 : 100;
+        const y = Math.round(window.scrollY / step) * step;
+        const cp = Math.round(prog(this.catRef.current) * q) / q;
+        const wp = Math.round(prog(this.workRef.current) * q) / q;
+        if (y === this.state.sy && cp === this.state.catP && wp === this.state.workP) return;
+        this.setState({ sy: y, catP: cp, workP: wp });
+      });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+
+    this._show = (el) => {
+      el.style.opacity = '1';
+      el.style.transform = el.dataset.reveal === 'pop' ? 'translate(0, 0) scale(1) rotate(0deg)' : 'none';
+      if (this._io) this._io.unobserve(el);
+      el.dataset.revealDone = '1';
+    };
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting || en.boundingClientRect.bottom < 0) this._show(en.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -4% 0px' });
+    this._sweep = () => {
+      document.querySelectorAll('[data-reveal]:not([data-reveal-done])').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < 0 || (r.top < window.innerHeight && r.bottom > 0)) this._show(el);
+      });
+    };
+    setTimeout(() => {
+      document.querySelectorAll('[data-reveal]').forEach((el) => this._io.observe(el));
+      this._sweep();
+    }, 40);
+    this._sweepTimer = setInterval(() => this._sweep(), 400);
+
+    // keep the marquee's second copy in sync with the first so the loop never runs empty
+    this._keys = {};
+    const mirrorOne = (i) => {
+      const a = document.getElementById('work-' + i), b = document.getElementById('work-' + i + 'b');
+      if (!a || !b || !a.shadowRoot) return;
+      const el = a.shadowRoot.querySelector('img');
+      if (!el || !el.src) return;
+      // match the slot's own framing: image-slot positions its <img> absolutely
+      // (percent width/height/left/top + translate(-50%,-50%)), so copy that geometry
+      if (b.parentElement) b.parentElement.style.position = 'relative';
+      const si = el.style;
+      b.style.position = 'absolute';
+      b.style.maxWidth = 'none';
+      b.style.transform = 'translate(-50%,-50%)';
+      b.style.width = si.width || '100%';
+      b.style.height = si.height || '100%';
+      b.style.left = si.left || '50%';
+      b.style.top = si.top || '50%';
+      b.style.objectFit = si.objectFit || 'cover';
+      const key = el.src.length + ':' + el.src.slice(-24);
+      if (this._keys[i] === key) return;
+      this._keys[i] = key;
+      b.setAttribute('src', el.src);
+    };
+    this._observers = [];
+    const attach = () => {
+      for (let i = 1; i <= 9; i++) {
+        const a = document.getElementById('work-' + i);
+        if (!a || !a.shadowRoot) continue;
+        mirrorOne(i);
+        const mo = new MutationObserver(() => mirrorOne(i));
+        mo.observe(a.shadowRoot, { subtree: true, attributes: true, attributeFilter: ['src', 'style'], childList: true });
+        this._observers.push(mo);
+      }
+    };
+    this._mirrorT = setTimeout(attach, 1200);
+    const tick = () => this.setState({ clock: new Date().toLocaleTimeString('en-GB', { timeZone: 'Europe/Madrid', hour12: false }) });
+    tick();
+    this._clock = setInterval(tick, 1000);
+
+    this._mirrorPoll = setInterval(() => { for (let i = 1; i <= 9; i++) mirrorOne(i); }, 3000);
+    this._onScroll();
+
+    const hv = this.horseVideoRef.current;
+    if (hv) {
+      hv.load();
+      // the still image carries the hero until the video actually has a frame
+      const showVideo = () => {
+        hv.style.opacity = '1';
+        const av = this.artVideoRef && this.artVideoRef.current;
+        if (av) av.style.opacity = '1';
+        // warm the decode pipeline so the first hover starts instantly
+        if (!this._warmed) {
+          this._warmed = true;
+          const p = hv.play();
+          if (p && p.then) p.then(() => {
+            setTimeout(() => { if (!this._playing) { hv.pause(); hv.currentTime = 0; } }, 220);
+          }).catch(() => {});
+        }
+      };
+      if (hv.readyState >= 2) showVideo(); else hv.addEventListener('loadeddata', showVideo, { once: true });
+    }
+
+    this._onPointer = (e) => {
+      if (window.scrollY > window.innerHeight * 0.9) return;
+      const lx = this._px, ly = this._py;
+      this._px = e.clientX; this._py = e.clientY;
+      if (lx === undefined) return;
+      const onFigure = this._material(e.clientX, e.clientY) === 'obsidian';
+      if (onFigure !== this._onFigure) {
+        this._onFigure = onFigure;
+        onFigure ? this._horseEnter() : this._horseLeave();
+      }
+    };
+    window.addEventListener('pointermove', this._onPointer, { passive: true });
+
+    this._sTarget = window.scrollY;
+    this._onWheel = (e) => {
+      if (e.ctrlKey || document.body.style.overflow === 'hidden') return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max <= 0) return;
+      e.preventDefault();
+      const step = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+      this._sTarget = Math.max(0, Math.min(max, this._sTarget + step * 0.5));
+      if (!this._sRaf) this._sLoop();
+    };
+    window.addEventListener('wheel', this._onWheel, { passive: false });
+
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      document.body.style.overflow = '';
+      this.setState({ pct: 100, loaded: true, revealed: true, showLoader: false });
+    } else {
+      const dur = 1500, t0 = performance.now() + 900;
+      this._tick = setInterval(() => {
+        const p = Math.max(0, Math.min(1, (performance.now() - t0) / dur));
+        this.setState({ pct: Math.round(p * 100) });
+        if (p >= 1) {
+          clearInterval(this._tick);
+          this._t1 = setTimeout(() => this.setState({ loaded: true }), 260);
+          this._t2 = setTimeout(() => this.setState({ revealed: true }), 560);
+          this._t3 = setTimeout(() => { document.body.style.overflow = ''; this.setState({ showLoader: false }); }, 1300);
+        }
+      }, 40);
+      this._flip = setInterval(() => this.setState(s => ({ showMark: !s.showMark })), (this.props.flipSeconds ?? 4) * 1000);
+    }
+  }
+
+  _material(px, py) {
+    const cw = window.innerWidth, chh = window.innerHeight;
+    const iw = 3840, ih = 2160;
+    const s = Math.max(cw / iw, chh / ih), dw = iw * s, dh = ih * s;
+    const u = (px - (cw - dw) * 0.34) / dw, v = (py - (chh - dh) * 0.58) / dh;
+    if (u > 0.378 && u < 0.605 && v > 0.545 && v < 0.835) return 'obsidian';
+    if (u > 0.352 && u < 0.655 && v > 0.815) return 'stone';
+    if (u > 0.138 && u < 0.845 && v > 0.072 && v < 0.805) return 'canvas';
+    return 'rock';
+  }
+
+  _crackSpec(mat) {
+    if (mat === 'obsidian') return { color: '166,201,238', glow: true, seg: 13, jitter: 0.16, branch: 0.14, depth: 2, w: 1.5, len: 88, life: 900, grow: 170, dust: 0 };
+    if (mat === 'stone') return { color: '206,203,180', glow: true, seg: 9, jitter: 0.16, branch: 0.14, depth: 2, w: 1.4, len: 44, life: 900, grow: 150, dust: 0 };
+    if (mat === 'rock') return { color: '236,229,216', glow: false, hard: true, grain: true, seg: 6, jitter: 0.46, branch: 0.4, depth: 3, w: 3.2, len: 50, life: 1800, grow: 240, dust: 0 };
+    return { kind: 'tear', color: '255,253,248', len: 44, gap: 5, life: 1400, grow: 220, solo: true };
+  }
+
+  // stone wear: an irregular spall flake with hairline fissures running off it
+  _makeChip(x, y, a, s) {
+    const n = 8 + Math.floor(Math.random() * 4);
+    const poly = [];
+    const stretch = 1 + Math.random() * 0.8;
+    for (let i = 0; i < n; i++) {
+      const t = (i / n) * 6.283;
+      const rad = s.r * (0.55 + Math.random() * 0.75) * (1 + Math.cos(t) * 0.35 * (stretch - 1));
+      const px = Math.cos(t) * rad * stretch, py = Math.sin(t) * rad;
+      poly.push({ x: x + px * Math.cos(a) - py * Math.sin(a), y: y + px * Math.sin(a) + py * Math.cos(a) });
+    }
+    const segs = [];
+    const fis = 2 + Math.floor(Math.random() * 3);
+    for (let f = 0; f < fis; f++) {
+      const from = poly[Math.floor(Math.random() * poly.length)];
+      let cx = from.x, cy = from.y, ca = Math.atan2(cy - y, cx - x) + (Math.random() - 0.5) * 0.9;
+      const steps = 4;
+      const reach = s.len * (0.5 + Math.random() * 0.8);
+      for (let k = 0; k < steps; k++) {
+        ca += (Math.random() - 0.5) * 0.55;
+        const step = (reach / steps) * (0.6 + Math.random() * 0.8);
+        const nx = cx + Math.cos(ca) * step, ny = cy + Math.sin(ca) * step;
+        segs.push({ x1: cx, y1: cy, x2: nx, y2: ny, w: Math.max(0.3, 1.6 * (1 - k / (steps + 0.5))) });
+        cx = nx; cy = ny;
+      }
+    }
+    return { poly, segs };
+  }
+
+  // canvas tear: two lips pulling apart with fibres bridging the opening
+  _makeTear(x, y, a, s) {
+    const n = 9;
+    const spine = [];
+    let cx = x - Math.cos(a) * s.len * 0.5, cy = y - Math.sin(a) * s.len * 0.5, ca = a;
+    for (let i = 0; i <= n; i++) {
+      spine.push({ x: cx, y: cy, f: i / n });
+      ca += (Math.random() - 0.5) * 0.55;
+      const step = (s.len / n) * (0.7 + Math.random() * 0.6);
+      cx += Math.cos(ca) * step; cy += Math.sin(ca) * step;
+    }
+    const lipA = [], lipB = [], fibres = [];
+    for (let i = 0; i < spine.length; i++) {
+      const p = spine[i], q = spine[Math.min(i + 1, spine.length - 1)];
+      const dx = q.x - p.x, dy = q.y - p.y, l = Math.hypot(dx, dy) || 1;
+      const nx = -dy / l, ny = dx / l;
+      const open = Math.sin(p.f * Math.PI) * s.gap * (0.6 + Math.random() * 0.8);
+      lipA.push({ x: p.x + nx * open, y: p.y + ny * open });
+      lipB.push({ x: p.x - nx * open, y: p.y - ny * open });
+      if (open > 1.2 && Math.random() < 0.75) {
+        const j = (Math.random() - 0.5) * 3;
+        fibres.push({
+          x1: p.x + nx * open * (0.9 + Math.random() * 0.2) + dx * 0.1,
+          y1: p.y + ny * open * (0.9 + Math.random() * 0.2) + dy * 0.1,
+          x2: p.x - nx * open * (Math.random() < 0.35 ? 0.35 : 0.95) + j,
+          y2: p.y - ny * open * (Math.random() < 0.35 ? 0.35 : 0.95) + j,
+          f: p.f
+        });
+      }
+    }
+    return { lipA, lipB, fibres };
+  }
+
+  // radial impact web: arms out from the strike point, chords bridging neighbours
+  _makeWeb(x, y, a, s) {
+    const segs = [], arms = [];
+    const n = s.arms + Math.floor(Math.random() * 3);
+    const reach = s.len * (0.75 + Math.random() * 0.5);
+    for (let i = 0; i < n; i++) {
+      const ang = a + (i / n) * 6.283 + (Math.random() - 0.5) * 0.5;
+      const pts = [{ x, y }];
+      let cx = x, cy = y, ca = ang, r = 0;
+      const steps = 5;
+      const rr = reach * (0.55 + Math.random() * 0.75);
+      for (let k = 0; k < steps; k++) {
+        ca += (Math.random() - 0.5) * s.jitter;
+        const step = (rr / steps) * (0.7 + Math.random() * 0.7);
+        cx += Math.cos(ca) * step; cy += Math.sin(ca) * step; r += step;
+        pts.push({ x: cx, y: cy, r });
+        segs.push({ x1: pts[pts.length - 2].x, y1: pts[pts.length - 2].y, x2: cx, y2: cy, w: Math.max(0.35, s.w * (1 - k / (steps + 1.2))) });
+      }
+      arms.push(pts);
+    }
+    for (let ring = 1; ring <= s.rings; ring++) {
+      const f = ring / (s.rings + 0.6);
+      for (let i = 0; i < arms.length; i++) {
+        const p = arms[i], q = arms[(i + 1) % arms.length];
+        const ia = Math.min(p.length - 1, Math.max(1, Math.round(f * (p.length - 1) + (Math.random() - 0.5)))); 
+        const ib = Math.min(q.length - 1, Math.max(1, Math.round(f * (q.length - 1) + (Math.random() - 0.5))));
+        const A = p[ia], B = q[ib];
+        if (!A || !B || Math.random() < 0.16) continue;
+        const mx = (A.x + B.x) / 2 + (Math.random() - 0.5) * 10 - (x - (A.x + B.x) / 2) * 0.08;
+        const my = (A.y + B.y) / 2 + (Math.random() - 0.5) * 10 - (y - (A.y + B.y) / 2) * 0.08;
+        const w = Math.max(0.3, s.w * (0.55 - ring * 0.1));
+        segs.push({ x1: A.x, y1: A.y, x2: mx, y2: my, w });
+        segs.push({ x1: mx, y1: my, x2: B.x, y2: B.y, w });
+      }
+    }
+    return segs;
+  }
+
+  // fracture: a main fissure that wanders, kinks and sheds tapering splinters
+  _makeCrack(x, y, a, spec) {
+    if (spec.web) return this._makeWeb(x, y, a, spec);
+    const segs = [];
+    const walk = (px, py, ang, remain, depth, width) => {
+      const n = Math.max(3, Math.round(spec.seg * (depth === spec.depth ? 1 : 0.55)));
+      let cx = px, cy = py, ca = ang;
+      for (let i = 0; i < n; i++) {
+        // grain-following wander with occasional hard kink at a weak point
+        ca += (Math.random() - 0.5) * spec.jitter * (Math.random() < 0.18 ? 3.2 : 1);
+        const step = (remain / n) * (0.55 + Math.random() * 0.9);
+        const nx = cx + Math.cos(ca) * step, ny = cy + Math.sin(ca) * step;
+        const taper = Math.pow(1 - i / (n + 0.6), 1.25) * (0.7 + Math.random() * 0.6);
+        segs.push({ x1: cx, y1: cy, x2: nx, y2: ny, w: Math.max(0.3, width * taper) });
+        cx = nx; cy = ny;
+        if (depth > 0 && Math.random() < spec.branch) {
+          walk(cx, cy, ca + (Math.random() < 0.5 ? -1 : 1) * (0.35 + Math.random() * 0.85), remain * (0.28 + Math.random() * 0.3), depth - 1, width * (0.4 + Math.random() * 0.25));
+        }
+      }
+    };
+    const reach = spec.len * (0.7 + Math.random() * 0.6);
+    walk(x, y, a, reach, spec.depth, spec.w);
+    walk(x, y, a + Math.PI + (Math.random() - 0.5) * 0.9, reach * 0.55, spec.depth - 1, spec.w * 0.6);
+    return segs;
+  }
+
+  // ---- liquid hero: the video is a GPU texture displaced by directional
+  // pointer wakes. The loop and the 4K texture upload only run while a wake is
+  // alive, so an idle or scrolling page pays nothing for it.
+  _initLiquid() {
+    if (this._G || this._dead) return;
+    const fine = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!fine || reduce) return;
+    const c = this.glRef.current, v = this.bgRef.current;
+    if (!c || !v || !c.clientWidth) { this._glWait = requestAnimationFrame(() => this._initLiquid()); return; }
+    const gl = c.getContext('webgl', { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: 'high-performance' });
+    if (!gl) return;
+
+    const N = 10;
+    const fs = [
+      'precision mediump float;',
+      'uniform sampler2D uTex;uniform vec2 uRes;uniform vec2 uTexRes;',
+      'uniform vec2 uP[' + N + '];uniform vec4 uS[' + N + '];',
+      'uniform float uRadius;uniform float uAmp;',
+      'void main(){',
+      ' vec2 f=gl_FragCoord.xy;vec2 disp=vec2(0.0);',
+      ' for(int i=0;i<' + N + ';i++){',
+      '  float age=uS[i].w; if(age<0.0) continue;',
+      '  vec2 d=f-uP[i]; float dist=length(d)+0.0001; float q=dist/uRadius;',
+      '  float fall=exp(-q*q*1.35); if(fall<0.003) continue;',
+      '  float w=sin(q*5.2-age*4.6)*exp(-age*2.15)*fall;',
+      '  disp+=normalize(mix(d/dist,uS[i].xy,0.42))*w*uS[i].z;',
+      ' }',
+      ' float ca=uRes.x/uRes.y, va=uTexRes.x/uTexRes.y;',
+      ' vec2 uv=f/uRes + disp*uAmp/uRes;',
+      ' vec2 k = ca>va ? vec2(1.0, va/ca) : vec2(ca/va, 1.0);',
+      ' uv=0.5+(uv-0.5)*k;',
+      ' vec3 col=texture2D(uTex,clamp(uv,0.0005,0.9995)).rgb;',
+      ' gl_FragColor=vec4(col+clamp(disp.y*0.006,-0.05,0.05),1.0);',
+      '}'
+    ].join('\n');
+    const mk = (t, src) => { const sh = gl.createShader(t); gl.shaderSource(sh, src); gl.compileShader(sh); return sh; };
+    const prog = gl.createProgram();
+    gl.attachShader(prog, mk(gl.VERTEX_SHADER, 'attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}'));
+    gl.attachShader(prog, mk(gl.FRAGMENT_SHADER, fs));
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
+    gl.useProgram(prog);
+    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+    const la = gl.getAttribLocation(prog, 'a');
+    gl.enableVertexAttribArray(la);
+    gl.vertexAttribPointer(la, 2, gl.FLOAT, false, 0, 0);
+    const tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+
+    this._G = {
+      gl, tex, N, raf: 0, dpr: 1,
+      u: { res: gl.getUniformLocation(prog, 'uRes'), texRes: gl.getUniformLocation(prog, 'uTexRes'),
+           p: gl.getUniformLocation(prog, 'uP[0]'), s: gl.getUniformLocation(prog, 'uS[0]'),
+           radius: gl.getUniformLocation(prog, 'uRadius'), amp: gl.getUniformLocation(prog, 'uAmp') },
+      pos: new Float32Array(N * 2), st: new Float32Array(N * 4),
+      born: new Float64Array(N), slot: 0
+    };
+    for (let i = 0; i < N; i++) this._G.st[i * 4 + 3] = -1;
+    this._glResize();
+    this._onResize2 = () => this._glResize();
+    window.addEventListener('resize', this._onResize2);
+
+    this._bindLiquid();
+  }
+
+  _bindLiquid() {
+    this._onLiquid = (e) => {
+      const G = this._G;
+      if (!G || window.scrollY > window.innerHeight * 0.85) return;
+      const now = performance.now();
+      const lx = this._lqx, ly = this._lqy, lt = this._lqt;
+      this._lqx = e.clientX; this._lqy = e.clientY; this._lqt = now;
+      if (lx === undefined) return;
+      const dx = e.clientX - lx, dy = e.clientY - ly, len = Math.hypot(dx, dy);
+      if (len < 7) return;
+      const str = 0.3 + Math.min(1, (len / Math.max(8, now - lt)) / 1.9) * 0.85;
+      const i = G.slot; G.slot = (G.slot + 1) % G.N;
+      const d = G.dpr;
+      G.pos[i * 2] = e.clientX * d;
+      G.pos[i * 2 + 1] = (window.innerHeight - e.clientY) * d;
+      G.st[i * 4] = dx / len; G.st[i * 4 + 1] = -dy / len;
+      G.st[i * 4 + 2] = str; G.st[i * 4 + 3] = 0;
+      G.born[i] = now;
+      if (!this.state.liquid) this.setState({ liquid: true });
+      if (!G.raf) this._glLoop();
+    };
+    window.addEventListener('pointermove', this._onLiquid, { passive: true });
+  }
+
+  _emb() {
+    if (this._embedded === undefined) { try { this._embedded = window.self !== window.top; } catch (err) { this._embedded = true; } }
+    return this._embedded;
+  }
+
+  _blur(sy, vh, max) {
+    if (sy < 2) return 'none';
+    let t = Math.max(0, Math.min(1, (sy - vh * 0.38) / (vh * 1.05)));
+    // embedded preview: 4 blur steps instead of a new radius every frame, so the
+    // compositor can reuse its cached blurred layer while scrolling
+    if (this._emb()) {
+      const step = Math.round(t * 4) / 4;
+      return step <= 0 ? 'none' : 'blur(' + (step * max).toFixed(1) + 'px)';
+    }
+    return 'blur(' + (t * max).toFixed(1) + 'px)';
+  }
+
+  _glResize() {
+    const G = this._G, c = this.glRef.current;
+    if (!G || !c) return;
+    // render below device pixels: the displacement hides the softness and it
+    // keeps a 4K source affordable
+    const d = Math.min(window.devicePixelRatio || 1, 1);
+    const w = Math.round(c.clientWidth * d), hh = Math.round(c.clientHeight * d);
+    if (!w || !hh) return;
+    G.dpr = d; c.width = w; c.height = hh;
+    G.gl.viewport(0, 0, w, hh);
+    G.gl.uniform2f(G.u.res, w, hh);
+    G.gl.uniform1f(G.u.radius, Math.max(120, w * 0.15));
+    G.gl.uniform1f(G.u.amp, Math.max(14, w * 0.016));
+  }
+
+  _glLoop() {
+    const G = this._G;
+    if (!G || this._dead) { return; }
+    const now = performance.now();
+    const gl = G.gl, v = this.bgRef.current;
+    let live = 0;
+    for (let i = 0; i < G.N; i++) {
+      const age = (now - G.born[i]) / 1000;
+      if (!G.born[i] || age > 2.6) { G.st[i * 4 + 3] = -1; continue; }
+      G.st[i * 4 + 3] = age; live++;
+    }
+    if (!live) {
+      // hand back to the video, but keep drawing live frames until the
+      // cross-fade ends so the canvas never shows a frozen frame
+      if (!G.fadeAt) { G.fadeAt = now; if (this.state.liquid) this.setState({ liquid: false }); }
+      if (now - G.fadeAt > 320) { G.raf = 0; G.fadeAt = 0; return; }
+    } else G.fadeAt = 0;
+    if (!document.hidden && v && v.readyState >= 2 && v.videoWidth) {
+      gl.bindTexture(gl.TEXTURE_2D, G.tex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, v);
+      gl.uniform2f(G.u.texRes, v.videoWidth, v.videoHeight);
+    }
+    gl.uniform2fv(G.u.p, G.pos);
+    gl.uniform4fv(G.u.s, G.st);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    G.raf = requestAnimationFrame(() => this._glLoop());
+  }
+
+  _horseEnter() {
+    const v = this.horseVideoRef && this.horseVideoRef.current;
+    if (!v || this._playing) return;
+    this._playing = true;
+    const a = this.artVideoRef && this.artVideoRef.current;
+    const go = () => {
+      if (v.currentTime > 0.05) v.currentTime = 0;
+      const p = v.play();
+      if (p && p.catch) p.catch(() => { this._playing = false; });
+      if (a) { if (a.currentTime > 0.05) a.currentTime = 0; const q = a.play(); if (q && q.catch) q.catch(() => {}); }
+    };
+    if (v.readyState >= 2) go(); else v.addEventListener('loadeddata', go, { once: true });
+    if (!this._endBound) {
+      this._endBound = true;
+      v.addEventListener('ended', () => {
+        this._playing = false;
+        v.currentTime = 0;
+        if (a) { a.pause(); a.currentTime = 0; }
+      });
+    }
+  }
+
+  _horseLeave() {}
+
+  _sLoop() {
+    const cur = window.scrollY;
+    const d = this._sTarget - cur;
+    if (Math.abs(d) < 0.5) { this._sRaf = null; this._sTarget = cur; return; }
+    window.scrollTo(0, cur + d * 0.07);
+    this._sRaf = requestAnimationFrame(() => this._sLoop());
+  }
+
+  // page transition: keep this page on screen while Works slides up over it,
+  // then hand over for real once the panel has covered the viewport
+  _slideToWorks(e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    if (this._leaving) return;
+    this._leaving = true;
+    const url = './Works.dc.html#noenter';
+    const f = document.createElement('iframe');
+    f.src = url;
+    f.setAttribute('title', 'Works');
+    f.setAttribute('scrolling', 'no');
+    f.style.cssText = 'position:fixed;left:0;top:0;width:100%;height:100%;border:0;z-index:9999;transform:translate3d(0,100%,0);will-change:transform;backface-visibility:hidden;background:#05070a;pointer-events:none;';
+    document.body.appendChild(f);
+
+    // quiet this page down: a marquee + playing video competing for the main thread
+    // is what makes the slide stutter
+    document.querySelectorAll('.strip-track').forEach((el) => { el.style.animationPlayState = 'paused'; });
+    document.querySelectorAll('video').forEach((v) => { try { v.pause(); } catch (err) {} });
+
+    // drive the panel on the compositor: rAF/transition callbacks can be starved by
+    // the incoming document's parse+decode, a WAAPI animation cannot
+    const go = () => { location.href = url; };
+    const anim = f.animate(
+      [{ transform: 'translate3d(0,100%,0)' }, { transform: 'translate3d(0,0,0)' }],
+      { duration: 900, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'forwards' }
+    );
+    if (anim && anim.finished) anim.finished.then(go).catch(() => {});
+    setTimeout(go, 1400);
+  }
+
+  // Back from Works restores this page from bfcache — undo the transition's
+  // "quiet down" so the marquee and hero video aren't left frozen
+  _onPageShow = () => {
+    this._leaving = false;
+    document.querySelectorAll('iframe[title="Works"]').forEach((el) => el.remove());
+    document.querySelectorAll('.strip-track').forEach((el) => { el.style.animationPlayState = ''; });
+  };
+
+  // ---- background clip: kept in IndexedDB so it survives a reload ----
+  _db() {
+    if (this._dbP) return this._dbP;
+    this._dbP = new Promise((res, rej) => {
+      const r = indexedDB.open('pbf-home', 1);
+      r.onupgradeneeded = () => r.result.createObjectStore('clips');
+      r.onsuccess = () => res(r.result);
+      r.onerror = () => rej(r.error);
+    });
+    return this._dbP;
+  }
+
+  async _loadBg() {
+    // the shipped 1080p file is the hero clip; a stored upload is only used when
+    // it was picked deliberately, so an old heavy copy no longer loads by itself
+    this._useBg('./assets/hero-main.mp4');
+    let opted = false;
+    try { opted = localStorage.getItem('pbf-hero-custom') === '1'; } catch (err) {}
+    if (opted) this._bgFromStore();
+  }
+
+  async _bgFromStore() {
+    try {
+      const db = await this._db();
+      const blob = await new Promise((res) => {
+        const tx = db.transaction('clips', 'readonly');
+        const q = tx.objectStore('clips').get('hero');
+        q.onsuccess = () => res(q.result); q.onerror = () => res(null);
+      });
+      if (blob) { this._useBg(URL.createObjectURL(blob)); return true; }
+    } catch (err) {}
+    return false;
+  }
+
+  async _setBg(file) {
+    if (!file || !/^video\//.test(file.type)) return;
+    this._useBg(URL.createObjectURL(file));
+    try { localStorage.setItem('pbf-hero-custom', '1'); } catch (err) {}
+    try {
+      const db = await this._db();
+      const tx = db.transaction('clips', 'readwrite');
+      tx.objectStore('clips').put(file, 'hero');
+    } catch (err) {}
+  }
+
+  _useBg(url) {
+    this.setState({ bgSrc: url });
+    const v = this.bgRef && this.bgRef.current;
+    if (!v) return;
+    v.src = url;
+    const play = () => { const q = v.play(); if (q && q.catch) q.catch(() => setTimeout(play, 240)); };
+    if (v.readyState >= 2) play(); else v.addEventListener('canplay', play, { once: true });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('dragover', this._onDragOver);
+    window.removeEventListener('drop', this._onDropBg);
+    window.removeEventListener('pageshow', this._onPageShow);
+    window.removeEventListener('wheel', this._onWheel);
+    clearTimeout(this._artT);
+    this._dead = true;
+    window.removeEventListener('pointermove', this._onPointer);
+    if (this._G && this._G.raf) cancelAnimationFrame(this._G.raf);
+    if (this._glWait) cancelAnimationFrame(this._glWait);
+    window.removeEventListener('pointermove', this._onLiquid);
+    if (this._sRaf) cancelAnimationFrame(this._sRaf);
+    clearInterval(this._tick); clearInterval(this._flip);
+    clearTimeout(this._t1); clearTimeout(this._t2); clearTimeout(this._t3);
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+    clearInterval(this._sweepTimer);
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._mirrorT); clearInterval(this._mirrorPoll); clearInterval(this._clock);
+    (this._observers || []).forEach(o => o.disconnect());
+    document.body.style.overflow = '';
+  }
+
+  componentDidUpdate() { this._syncArtRect(); }
+
+
+  _setLang(l) {
+    this.setState({ lang: l });
+    try { localStorage.setItem('pf-lang', l); } catch (e) {}
+  }
+
+  renderVals() {
+    const { sy, catP, workP, showLoader, pct, loaded, revealed, showMark, menu, w } = this.state;
+    const sl = this.state.slide || 0;
+    const vh = typeof window !== 'undefined' ? window.innerHeight : 900;
+    const mobile = w < 720;
+    const hid = '110%';
+    const p = this.props;
+    const es = (this.state.lang || 'en') === 'es';
+    const T = es ? {
+      heroA: 'Historias talladas', heroB: 'en obsidiana.',
+      heroP: 'Cine documentales, motor y deporte transmitiendo más que una imagen, aquello que se siente en un instante y se queda grabado en la memoria.',
+      ctaWorks: 'Ver trabajos', disc1: 'Documental', disc2: 'Motor', disc3: 'Marca',
+      lblContact: 'CONTACTO', lblPath: '01 — ELIGE TU CAMINO',
+      contactLine: 'Para colaborar y crear juntos.', ctaAbout: 'Sobre mí',
+      navPortfolio: 'Portfolio', navWorks: 'Trabajos', navAbout: 'Estudio',
+      lblYT: '03 — PROYECTOS PERSONALES',
+      yLine1: 'Proyectos', yLine2: 'personales.',
+      yPara: 'Piezas de grabación documental de proyectos de viaje y aventura en la montaña, editados para mi canal personal de YouTube donde documento los días en la naturaleza, su historia, supervivencia, misterio, entre otros… todo alrededor de mis pasiones.',
+      ytA: 'VALORAR — LA PALMA', ytB: 'SPLIT — PIRINEOS', ytC: 'NADA — MAURITANIA', ytD: 'VERTIGO — PIRINEOS', ytE: 'SKYE — ESCOCIA', ytF: 'ACCIONES — LOFOTEN',
+      lblDisc: '02 — DISCIPLINAS', wLine1: 'Trabajo que', wLine2: 'habla por nosotros.',
+      wPara: 'Fotogramas e imágenes seleccionadas con marcas y eventos de renombre, deportes de naturaleza y proyectos personales — pasión por capturar lo auténtico.',
+      lblTime: 'ESPAÑA — HORA DE ESTUDIO', lblReel: 'Reel continuo — pasa el cursor para ampliar'
+    } : {
+      heroA: 'Stories cast', heroB: 'in obsidian.',
+      heroP: 'Documentary, motor and sports films carrying more than an image — what you feel in an instant and keep in your memory.',
+      ctaWorks: 'View works', disc1: 'Documentary', disc2: 'Motor sports', disc3: 'Brand films',
+      lblContact: 'CONTACT', lblPath: '01 — CHOOSE YOUR PATH',
+      contactLine: 'To collaborate and create together.', ctaAbout: 'About me',
+      navPortfolio: 'Portfolio', navWorks: 'Works', navAbout: 'About',
+      lblYT: '03 — PERSONAL PROJECTS',
+      yLine1: 'Personal', yLine2: 'projects.',
+      yPara: 'Documentary footage from travel and mountain adventure projects, edited for my personal YouTube channel, where I document days out in nature — their history, survival, mystery and more… all built around my passions.',
+      ytA: 'VALORAR — LA PALMA', ytB: 'SPLIT — PYRENEES', ytC: 'NADA — MAURITANIA', ytD: 'VERTIGO — PYRENEES', ytE: 'SKYE — SCOTLAND', ytF: 'ACCIONES — LOFOTEN',
+      lblDisc: '02 — DISCIPLINES', wLine1: 'Work that', wLine2: 'speaks for us.',
+      wPara: 'Selected frames and stills with renowned brands and events, nature sports and personal projects — a passion for capturing the authentic.',
+      lblTime: 'SPAIN — STUDIO TIME', lblReel: 'Continuous reel — hover to expand a frame'
+    };
+    return {
+      ...T,
+      setEN: () => this._setLang('en'),
+      setES: () => this._setLang('es'),
+      enBg: es ? 'transparent' : '#ede6d8',
+      enFg: es ? 'rgba(237,230,216,.72)' : '#131a23',
+      esBg: es ? '#ede6d8' : 'transparent',
+      esFg: es ? '#131a23' : 'rgba(237,230,216,.72)',
+      tagline: p.tagline ?? 'Film Production Studio',
+      line1: p.headlineLine1 ?? 'Stories,',
+      line2: p.headlineLine2 ?? 'cast in bronze.',
+      subline: p.subline ?? 'Peybolfilms — commercial · fashion · documentary',
+      contactLabel: p.contactLabel ?? 'PEYBOL_FILMS - MOTOR - SPORTS - DOCUMENTARY',
+      mailto: 'mailto:' + (p.contactEmail ?? 'peybolfilms@gmail.com'),
+      navInstagram: p.navInstagram ?? 'Instagram',
+      instagramUrl: p.instagramUrl ?? 'https://www.instagram.com/bypeybol/',
+      loaderCaption: p.loaderCaption ?? 'Film Production Studio / Spain',
+      catEyebrow: p.catEyebrow ?? 'Disciplines',
+      catLabel1: p.catLabel1 ?? 'Commercial',
+      catLabel2: p.catLabel2 ?? 'Fashion',
+      catLabel3: p.catLabel3 ?? 'ABOUT',
+      clock: this.state.clock || '',
+      workBlurb: p.workBlurb ?? 'Selected frames from commercials, fashion films and documentary work — shot, cut, graded and scored in house.',
+      workLine1: p.workLine1 ?? 'Work that',
+      workLine2: p.workLine2 ?? 'speaks for us.',
+      glO: this.state.liquid ? 1 : 0,
+      heroWC: sy < 2 || sy > vh ? 'auto' : 'transform, filter',
+      heroFilter: this._blur(sy, vh, 7),
+      heroFilterGL: this._blur(sy, vh, 14),
+      heroScale2: this._emb() ? '1' : (2 + Math.min(1, sy / vh) * 0.16).toFixed(4),
+      heroScale: this._emb() ? '1' : (1 + Math.min(1, sy / vh) * 0.08).toFixed(4),
+      heroDim: (Math.min(0.88, (sy / (vh * 0.85)) * 0.88) + Math.max(0, Math.min(1, (sy - vh * 1.15) / (vh * 0.7))) * 0.12).toFixed(3),
+      deepDim: Math.max(0, Math.min(1, (sy - vh * 1.15) / (vh * 0.85))).toFixed(3),
+      cardY1: Math.round((catP - 0.5) * -46) + 'px',
+      cardY2: Math.round((catP - 0.5) * 28) + 'px',
+      cardY3: Math.round((catP - 0.5) * -64) + 'px',
+      stripX: Math.round(-workP * Math.max(0, 2470 - w + 128)) + 'px',
+      catRef: this.catRef,
+      horseVideoRef: this.horseVideoRef,
+      artRectRef: this.artRectRef,
+      artVideoRef: this.artVideoRef,
+      s0: sl === 0 ? 1 : 0,
+      s1: sl === 1 ? 1 : 0,
+      s2: sl === 2 ? 1 : 0,
+      s3: sl === 3 ? 1 : 0,
+      s4: sl === 4 ? 1 : 0,
+      s5: sl === 5 ? 1 : 0,
+      s6: sl === 6 ? 1 : 0,
+      d0: sl === 0 ? .82 : .22,
+      d1: sl === 1 ? .82 : .22,
+      d2: sl === 2 ? .82 : .22,
+      d3: sl === 3 ? .82 : .22,
+      d4: sl === 4 ? .82 : .22,
+      d5: sl === 5 ? .82 : .22,
+      d6: sl === 6 ? .82 : .22,
+      bgRef: this.bgRef,
+      glRef: this.glRef,
+      chipRef: this.chipRef,
+      bgO: this.state.bgSrc ? 1 : 0,
+      posterO: this.state.bgSrc ? 0 : 0.5,
+      bgB: this.state.bgSrc ? 0.5 : 0.22,
+      bgLabel: this.state.bgSrc ? 'Cambiar vídeo de fondo' : 'Subir vídeo de fondo',
+      pickBg: (e) => {
+        const f = e.target.files && e.target.files[0];
+        if (f) this._setBg(f);
+        e.target.value = '';
+      },
+      toWorks: (e) => this._slideToWorks(e),
+      toWorksMenu: (e) => { this.setState({ menu: false }); this._slideToWorks(e); },
+      go0: () => { this.setState({ slide: 0 }); this._artStep && this._artStep(0); },
+      go1: () => { this.setState({ slide: 1 }); this._artStep && this._artStep(1); },
+      go2: () => { this.setState({ slide: 2 }); this._artStep && this._artStep(2); },
+      go3: () => { this.setState({ slide: 3 }); this._artStep && this._artStep(3); },
+      go4: () => { this.setState({ slide: 4 }); this._artStep && this._artStep(4); },
+      go5: () => { this.setState({ slide: 5 }); this._artStep && this._artStep(5); },
+      go6: () => { this.setState({ slide: 6 }); this._artStep && this._artStep(6); },
+      pe0: sl === 0 ? 'auto' : 'none',
+      pe1: sl === 1 ? 'auto' : 'none',
+      pe2: sl === 2 ? 'auto' : 'none',
+      pe3: sl === 3 ? 'auto' : 'none',
+      pe4: sl === 4 ? 'auto' : 'none',
+      pe5: sl === 5 ? 'auto' : 'none',
+      pe6: sl === 6 ? 'auto' : 'none',
+      horseEnter: () => this._horseEnter(),
+      horseLeave: () => this._horseLeave(),
+      workRef: this.workRef,
+      year: new Date().getFullYear(),
+      pctLabel: String(Math.min(100, pct)).padStart(3, '0'),
+      pctWidth: Math.min(100, pct) + '%',
+      showLoader: showLoader,
+      menuOpen: menu,
+      loaderO: loaded ? 0 : 1,
+      loaderBlur: loaded ? '14px' : '0px',
+      loaderPE: loaded ? 'none' : 'auto',
+      headerY: revealed ? '0px' : '-130%',
+      headerO: revealed ? 1 : 0,
+      y0: revealed ? '0%' : hid,
+      o0: revealed ? 1 : 0,
+      y1: revealed ? '0%' : hid,
+      o1: revealed ? 1 : 0,
+      y2: revealed ? '0%' : hid,
+      o2: revealed ? 1 : 0,
+      y3: revealed ? '0%' : hid,
+      o3: revealed ? 1 : 0,
+      barY: revealed && (sy <= 70 || this.state.up) ? '0px' : '-140%',
+      barO: revealed && (sy <= 70 || this.state.up) ? 1 : 0,
+      barPE: revealed && (sy <= 70 || this.state.up) ? 'auto' : 'none',
+      markO: revealed && sy > 70 && !this.state.up ? 1 : 0,
+      markBlur: sy > 70 && !this.state.up ? '0px' : '8px',
+      markPE: sy > 70 && !this.state.up ? 'auto' : 'none',
+      desktop: !mobile,
+      mobile: mobile,
+      menuO: menu ? 1 : 0,
+      menuPE: menu ? 'auto' : 'none',
+      openMenu: () => this.setState({ menu: true }),
+      closeMenu: () => this.setState({ menu: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
