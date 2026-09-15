@@ -84,20 +84,20 @@
       <nav style="display: flex; align-items: center; gap: 26px;">
         <a href="./portfolio/index.html" style="--rollY: 0%; display: block; height: 30px; overflow: hidden; text-decoration: none;" style-hover="--rollY: -100%;">
           <span style="display: block; transform: translateY(var(--rollY)); transition: transform 420ms cubic-bezier(.6,0,.2,1);">
-            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">Portfolio</span>
-            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">Portfolio</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">{{ navPortfolio }}</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">{{ navPortfolio }}</span>
           </span>
         </a>
         <a href="#" style="--rollY: 0%; display: block; height: 30px; overflow: hidden; text-decoration: none;" style-hover="--rollY: -100%;">
           <span style="display: block; transform: translateY(var(--rollY)); transition: transform 420ms cubic-bezier(.6,0,.2,1);">
-            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">Works</span>
-            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">Works</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">{{ navWorks }}</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">{{ navWorks }}</span>
           </span>
         </a>
         <a href="./about/index.html" style="--rollY: 0%; display: block; height: 30px; overflow: hidden; text-decoration: none;" style-hover="--rollY: -100%;">
           <span style="display: block; transform: translateY(var(--rollY)); transition: transform 420ms cubic-bezier(.6,0,.2,1);">
-            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">About</span>
-            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">About</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6);">{{ navAbout }}</span>
+            <span style="display: flex; align-items: center; height: 30px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3ba;">{{ navAbout }}</span>
           </span>
         </a>
         <a href="https://www.instagram.com/bypeybol/" target="_blank" rel="noreferrer" style="display: flex; align-items: center; height: 32px; padding: 0 15px; border: 1px solid rgba(237,230,216,.55); border-radius: 3px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #ede6d8; text-shadow: 0 1px 10px rgba(11,16,23,.6); text-decoration: none; transition: background 380ms ease, color 380ms ease;" style-hover="background: #ede6d8; color: #131a23;">Instagram</a>
@@ -114,9 +114,9 @@
 
   <div style="position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 0 26px; background: rgba(5,7,10,.97); backdrop-filter: blur(14px); opacity: {{ menuO }}; pointer-events: {{ menuPE }}; transition: opacity 460ms ease;">
     <button type="button" onClick="{{ toggleMenu }}" aria-label="Close" style="position: absolute; top: 18px; right: 22px; width: 44px; height: 44px; border: 1px solid rgba(237,230,216,.3); border-radius: 3px; background: transparent; color: #ede6d8; font-family: 'Instrument Sans', sans-serif; font-size: 17px; cursor: pointer;">×</button>
-    <a href="./portfolio/index.html" style="padding: 11px 0; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">Portfolio</a>
-    <a href="#" onClick="{{ toggleMenu }}" style="padding: 11px 0; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">Works</a>
-    <a href="./about/index.html" style="padding: 11px 0; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">About</a>
+    <a href="./portfolio/index.html" style="padding: 11px 0; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">{{ navPortfolio }}</a>
+    <a href="#" onClick="{{ toggleMenu }}" style="padding: 11px 0; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">{{ navWorks }}</a>
+    <a href="./about/index.html" style="padding: 11px 0; font-size: 30px; font-weight: 500; letter-spacing: -0.03em; color: #ede6d8;">{{ navAbout }}</a>
     <a href="https://www.instagram.com/bypeybol/" target="_blank" rel="noreferrer" style="padding: 11px 0; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #8fa3ba;">Instagram</a>
     <div role="group" aria-label="Language" style="display: flex; align-items: center; gap: 3px; width: fit-content; margin-top: 20px; height: 36px; padding: 0 4px; border: 1px solid rgba(237,230,216,.28); border-radius: 3px;">
       <button type="button" onClick="{{ setEN }}" style="display: flex; align-items: center; height: 44px; padding: 0 15px; border: 0; border-radius: 2px; background: {{ enBg }}; color: {{ enFg }}; font-family: 'Instrument Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer;">EN</button>
@@ -731,6 +731,9 @@ class Component extends DCLogic {
     const out = {
       titleRef: this.titleRef,
       setEN: () => this._setLang('en'),
+      navPortfolio: 'Portfolio',
+      navWorks: esOn ? 'Trabajos' : 'Works',
+      navAbout: esOn ? 'Estudio' : 'About',
       setES: () => this._setLang('es'),
       toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
       menuO: this.state.menuOpen ? 1 : 0,
