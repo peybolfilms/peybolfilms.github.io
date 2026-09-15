@@ -366,7 +366,7 @@
       </nav>
       </sc-if>
       <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
-        <button type="button" onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 8px; border: 1px solid rgba(237,230,216,.4); border-radius: 3px; background: transparent; cursor: pointer;">
+        <button type="button" onClick="{{ openMenu }}" aria-label="Open menu" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 34px; height: 32px; padding: 0 8px; border: 1px solid rgba(237,230,216,.4); border-radius: 3px; background: transparent; cursor: pointer;">
           <span style="display: block; height: 1.5px; background: #ede6d8;"></span>
           <span style="display: block; height: 1.5px; background: #ede6d8;"></span>
         </button>
@@ -1096,8 +1096,18 @@ class Component extends DCLogic {
     this.setState({ bgSrc: url });
     const v = this.bgRef && this.bgRef.current;
     if (!v) return;
+    // mobile browsers only allow inline autoplay when muted + playsinline are on
+    // the ELEMENT before play() is called — React's props alone are not enough
+    v.muted = true; v.defaultMuted = true; v.playsInline = true;
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('autoplay', '');
     v.src = url;
     const play = () => { const q = v.play(); if (q && q.catch) q.catch(() => setTimeout(play, 240)); };
+    // last resort on phones that still refuse: start it on the first tap
+    if (!this._kick) {
+      this._kick = () => { const q = v.play(); if (q && q.catch) q.catch(() => {}); };
+      window.addEventListener('touchstart', this._kick, { passive: true, once: true });
+      window.addEventListener('click', this._kick, { once: true });
+    }
     if (v.readyState >= 2) play(); else v.addEventListener('canplay', play, { once: true });
   }
 
