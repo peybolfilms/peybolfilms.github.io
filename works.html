@@ -659,6 +659,10 @@ class Component extends DCLogic {
     cancelAnimationFrame(this._raf);
   }
 
+  _phone() {
+    return !!(window.matchMedia && window.matchMedia('(max-width: 820px)').matches);
+  }
+
   _activeVideo() {
     const el = document.querySelector('[data-worksvid="' + this._shown() + '"]');
     return el && el.src ? el : null;
@@ -669,12 +673,14 @@ class Component extends DCLogic {
     const n = this.items().length;
     const set = {};
     set[d] = true;
-    // the neighbours must already be buffering when the swipe lands, otherwise
-    // a phone starts the fetch only after the reel is on screen
-    set[(d + 1) % n] = true;
-    set[(d - 1 + n) % n] = true;
+    const phone = this._phone();
+    // a phone has one pipe: the visible trailer gets all of it, neighbours wait
+    // until it can actually play. Desktop has the headroom to warm them up early.
     const cur = document.querySelector('[data-worksvid="' + d + '"]');
-    if (cur && cur.readyState >= 3) this.items().forEach((it, i) => { if (it.src) set[i] = true; });
+    const ready = cur && cur.readyState >= 3;
+    if (!phone) { set[(d + 1) % n] = true; set[(d - 1 + n) % n] = true; }
+    else if (ready) set[(d + 1) % n] = true;
+    if (ready && !phone) this.items().forEach((it, i) => { if (it.src) set[i] = true; });
     if (JSON.stringify(set) === JSON.stringify(this._loadSet || null)) return;
     this._loadSet = set;
     this.forceUpdate();
@@ -946,8 +952,8 @@ class Component extends DCLogic {
     for (let k = 0; k < n; k++) {
       out['o' + k] = k === d ? 1 : 0;
       out['pe' + k] = k === d ? 'auto' : 'none';
-      const nb = k === (d + 1) % n || k === (d - 1 + n) % n;
-      out['pl' + k] = (k === d || nb) ? 'auto' : 'metadata';
+      const nb = !this._phone() && (k === (d + 1) % n || k === (d - 1 + n) % n);
+      out['pl' + k] = (k === d || nb) ? 'auto' : 'none';
       out.rootRef = this.rootRef;
       const want = (this._loadSet || {})[k];
       const bad = (this._bad || {})[k];
