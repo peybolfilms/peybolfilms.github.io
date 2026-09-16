@@ -593,7 +593,10 @@ class Component extends DCLogic {
     window.addEventListener('keydown', this._onKey);
 
     const loop = () => {
-      this._raf = requestAnimationFrame(loop);
+      // iOS in low-power mode refuses autoplay until a gesture: use the first touch
+    this._unlock = () => { const v = this._activeVideo(); if (v && v.paused) { const q = v.play(); if (q && q.catch) q.catch(() => {}); } };
+    ['touchstart', 'touchend', 'pointerdown'].forEach((e) => window.addEventListener(e, this._unlock, { passive: true }));
+    this._raf = requestAnimationFrame(loop);
       if (this.state.player) return;
       if (!this._kpT || performance.now() - this._kpT > 300) { this._kpT = performance.now(); this._keepPlaying(); }
       // never let the progress watcher fire while a roll is in flight: the outgoing
@@ -614,6 +617,9 @@ class Component extends DCLogic {
       p = Math.max(0, Math.min(1, p));
       if (Math.abs(p - this.state.prog) > 0.002) this.setState({ prog: p });
     };
+    // iOS in low-power mode refuses autoplay until a gesture: use the first touch
+    this._unlock = () => { const v = this._activeVideo(); if (v && v.paused) { const q = v.play(); if (q && q.catch) q.catch(() => {}); } };
+    ['touchstart', 'touchend', 'pointerdown'].forEach((e) => window.addEventListener(e, this._unlock, { passive: true }));
     this._raf = requestAnimationFrame(loop);
     this._syncVideos();
   }
@@ -673,14 +679,13 @@ class Component extends DCLogic {
     const n = this.items().length;
     const set = {};
     set[d] = true;
-    const phone = this._phone();
-    // a phone has one pipe: the visible trailer gets all of it, neighbours wait
-    // until it can actually play. Desktop has the headroom to warm them up early.
     const cur = document.querySelector('[data-worksvid="' + d + '"]');
-    const ready = cur && cur.readyState >= 3;
-    if (!phone) { set[(d + 1) % n] = true; set[(d - 1 + n) % n] = true; }
-    else if (ready) set[(d + 1) % n] = true;
-    if (ready && !phone) this.items().forEach((it, i) => { if (it.src) set[i] = true; });
+    // the first trailer gets the pipe to itself; the moment it can play — or after
+    // 5s of waiting — every reel starts buffering, so a swipe always finds one ready
+    if (!this._t0) this._t0 = performance.now();
+    if (!this._openAll && ((cur && cur.readyState >= 2) || performance.now() - this._t0 > 5000)) this._openAll = true;
+    if (this._openAll) this.items().forEach((it, i) => { if (it.src) set[i] = true; });
+    else if (!this._phone()) { set[(d + 1) % n] = true; set[(d - 1 + n) % n] = true; }
     if (JSON.stringify(set) === JSON.stringify(this._loadSet || null)) return;
     this._loadSet = set;
     this.forceUpdate();
@@ -711,7 +716,8 @@ class Component extends DCLogic {
       const i = Number(el.getAttribute('data-worksvid'));
       if (el.readyState >= 2) el.style.opacity = '1';
       if (i === d) {
-        if (el.paused && el.readyState >= 2) { const q2 = el.play(); if (q2 && q2.catch) q2.catch(() => {}); }
+        // ask for playback even before it is ready: the intent survives the wait
+        if (el.paused) { const q2 = el.play(); if (q2 && q2.catch) q2.catch(() => {}); }
       } else if (!el.paused) el.pause();
     });
     if (v.readyState >= 2) {
@@ -952,8 +958,7 @@ class Component extends DCLogic {
     for (let k = 0; k < n; k++) {
       out['o' + k] = k === d ? 1 : 0;
       out['pe' + k] = k === d ? 'auto' : 'none';
-      const nb = !this._phone() && (k === (d + 1) % n || k === (d - 1 + n) % n);
-      out['pl' + k] = (k === d || nb) ? 'auto' : 'none';
+      out['pl' + k] = (k === d || this._openAll) ? 'auto' : 'none';
       out.rootRef = this.rootRef;
       const want = (this._loadSet || {})[k];
       const bad = (this._bad || {})[k];
